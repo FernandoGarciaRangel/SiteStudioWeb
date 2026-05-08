@@ -994,24 +994,35 @@ section { position: relative; }
 }
 
 .port-card.coming-soon {
+  grid-column: 1 / -1;
   background: var(--black-2);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px;
+  padding: 60px 40px;
   border-style: dashed;
+  min-height: 280px;
 }
-.port-card.coming-soon .pv-coming {
+.port-card.coming-soon .coming-soon-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 520px;
+}
+.port-card.coming-soon .coming-soon-title {
   font-family: 'Instrument Serif', serif;
   font-style: italic;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--orange);
-  margin-bottom: 8px;
+  margin: 0;
 }
-.port-card.coming-soon p {
+.port-card.coming-soon .coming-soon-sub {
   color: var(--gray-300);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* ── FAQ ── */
