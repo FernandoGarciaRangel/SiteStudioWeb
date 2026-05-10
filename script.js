@@ -1,3 +1,9 @@
+const WHATSAPP_NUMBER = '5521991088053';
+
+document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+  link.href = link.href.replace(/wa\.me\/[^?]+/, `wa.me/${WHATSAPP_NUMBER}`);
+});
+
 // Custom cursor
 const cursor = document.querySelector('.cursor');
 const dot = document.querySelector('.cursor-dot');
