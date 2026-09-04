@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Marca que o JS está vivo. As animações de entrada (.reveal, .hero-title .word)
+     e o cursor customizado só se aplicam sob html.js, então sem JS a página
+     renderiza inteira e visível em vez de ficar em branco. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Landing page para manicure em Niterói — Studio Web</title>
+<meta name="description" content="Página própria para manicure e nail designer: tabela de preços, galeria de unhas e agendamento direto no WhatsApp. No ar em 3 a 5 dias, a partir de R$ 450.">
+
+<link rel="canonical" href="https://www.studiowebniteroi.com.br/landing-page-para-manicure/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Web">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Niterói">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.studiowebniteroi.com.br/landing-page-para-manicure/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Web">
+<meta property="og:title" content="Landing page para manicure — Studio Web">
+<meta property="og:description" content="Página própria para manicure e nail designer: tabela de preços, galeria de unhas e agendamento direto no WhatsApp. A partir de R$ 450, pagamento único.">
+<meta property="og:image" content="https://www.studiowebniteroi.com.br/logo.png">
+<meta property="og:image:width" content="1092">
+<meta property="og:image:height" content="1092">
+<meta property="og:image:alt" content="Studio Web — landing pages para autônomos em Niterói">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Landing page para manicure — Studio Web">
+<meta name="twitter:description" content="Tabela de preços, galeria de unhas e agendamento no WhatsApp numa página só. A partir de R$ 450, sem mensalidade.">
+<meta name="twitter:image" content="https://www.studiowebniteroi.com.br/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/5521991088053?text=Olá!%20Sou%20manicure%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<header>
+<nav id="nav" aria-label="Navegação principal">
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Studio Web" width="32" height="32" decoding="async">
+    <span>Studio</span><span>Web</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#processo">Processo</a>
+    <a href="/#precos">Preços</a>
+    <a href="/#portfolio">Portfólio</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="/#precos" class="nav-cta">Quero a minha</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+</header>
+
+<main id="conteudo">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <nav class="crumbs" aria-label="Trilha de navegação">
+    <a href="/">Studio Web</a><span aria-hidden="true">/</span>Landing page para manicure
+  </nav>
+
+  <div class="hero-tag">Para manicures e nail designers · Niterói/RJ</div>
+
+  <h1 class="hero-title" id="hero-titulo">
+    <span class="word" style="animation-delay: 0.4s">Sua</span>
+    <span class="word" style="animation-delay: 0.5s"><em>agenda</em></span>
+    <span class="word" style="animation-delay: 0.6s">cheia</span><br>
+    <span class="word" style="animation-delay: 0.7s">sem</span>
+    <span class="word" style="animation-delay: 0.8s">viver</span>
+    <span class="word" style="animation-delay: 0.9s">no</span>
+    <span class="word" style="animation-delay: 1s"><span class="accent">direct.</span></span>
+  </h1>
+
+  <p class="hero-sub">
+    Uma página só sua, com tabela de serviços, galeria de unhas e botão de WhatsApp em todo canto. A cliente vê o preço, escolhe o horário e chama você já sabendo o que quer.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20manicure%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary">
+      Falar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <a href="/#precos" class="btn-secondary">
+      Ver pacotes e preços
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3-5</div>
+      <div class="stat-label">Dias para entrega</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Mobile first</div>
+    </div>
+    <div>
+      <div class="stat-num">R$450</div>
+      <div class="stat-label">A partir de</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">Mensalidade</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR DO NICHO -->
+<section class="problem section-padding" id="dor" aria-labelledby="dor-titulo">
+  <div style="max-width: 850px;">
+    <div class="section-tag reveal">O dia a dia de quem faz unha</div>
+    <h2 class="section-title reveal" id="dor-titulo">O trabalho é <em>na cadeira</em>, não respondendo mensagem.</h2>
+    <p class="section-sub reveal">Se você faz unha, provavelmente reconhece esses três nós:</p>
+
+    <div class="problem-list reveal">
+      <div class="problem-item">
+        <div class="problem-icon">01</div>
+        <div class="problem-text">
+          <h3 class="problem-title">"Quanto é a esmaltação em gel?" — de novo</h3>
+          <p>Você para no meio de um atendimento pra digitar o mesmo preço pela quinta vez no dia. E ainda assim metade não responde depois.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">02</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Seu melhor trabalho some no feed</h3>
+          <p>Aquela francesinha que ficou perfeita está lá, só que 200 posts atrás. Quem chega hoje no perfil não vê e não tem paciência de rolar.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">03</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Ninguém sabe se você vai até a casa dela</h3>
+          <p>Atendimento em domicílio, bairros que você cobre, horário de sábado, se aceita Pix — tudo isso só sai no direct, uma conversa de cada vez.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE A PÁGINA LEVA -->
+<section class="processo section-padding" id="inclui" aria-labelledby="inclui-titulo">
+  <div class="reveal">
+    <div class="section-tag">O que entra na sua página</div>
+    <h2 class="section-title" id="inclui-titulo">Quatro coisas que <em>resolvem</em> o direct.</h2>
+    <p class="section-sub">Nada de página genérica: a estrutura é montada pensando em como a sua cliente decide.</p>
+  </div>
+
+  <div class="processo-grid reveal">
+    <div class="proc-step">
+      <div class="proc-num">01</div>
+      <h3 class="proc-title">Tabela de serviços e preços</h3>
+      <p class="proc-desc">Alongamento, esmaltação em gel, manutenção, spa dos pés, blindagem — cada serviço com o valor e o tempo médio, à vista de todo mundo.</p>
+      <div class="proc-time">Fim do "quanto custa?"</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">02</div>
+      <h3 class="proc-title">Galeria de unhas</h3>
+      <p class="proc-desc">Suas melhores fotos organizadas por tipo de trabalho, com boa qualidade e carregando rápido no celular. Nada de rolar o feed inteiro.</p>
+      <div class="proc-time">Portfólio fixo</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">03</div>
+      <h3 class="proc-title">Agendamento pelo WhatsApp</h3>
+      <p class="proc-desc">Botão em todas as seções, com a mensagem já escrita — inclusive o serviço que ela estava olhando. Você recebe a conversa quase pronta.</p>
+      <div class="proc-time">Um clique</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04</div>
+      <h3 class="proc-title">Domicílio, horários e local</h3>
+      <p class="proc-desc">Onde você atende, se vai até a casa da cliente, quais bairros cobre, horário de sábado e formas de pagamento. Escrito uma vez, respondido pra sempre.</p>
+      <div class="proc-time">Sem repetir</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES (resumo) -->
+<section class="pricing section-padding" id="pacotes" aria-labelledby="pacotes-titulo">
+  <div class="pricing-header reveal">
+    <div class="section-tag" style="justify-content: center;">Investimento</div>
+    <h2 class="section-title" id="pacotes-titulo" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
+  </div>
+  <p class="section-sub pricing-sub-center reveal">Dois pacotes, pagamento único e parcelável em 2x no Pix. Domínio .com.br e hospedagem do primeiro ano inclusos.</p>
+
+  <div class="price-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Essencial</div>
+      <div class="price-tagline">Pra quem está montando a clientela agora</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">450</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 225</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 4 seções, com tabela de serviços</div>
+        <div class="price-feature">WhatsApp em todos os botões</div>
+        <div class="price-feature">Design 100% mobile-first</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta outline">Ver o Essencial completo</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-name">Profissional</div>
+      <div class="price-tagline">Pra quem já tem foto boa de sobra</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">750</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 375</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 7 seções, incluindo galeria de unhas</div>
+        <div class="price-feature">Galeria com scroll horizontal</div>
+        <div class="price-feature">FAQ interativo com accordion</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Métricas básicas de clique</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta primary">Ver o Profissional completo</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">
+    O Studio Web fica em Niterói/RJ e atende manicures e nail designers de Niterói, São Gonçalo, Maricá e Rio de Janeiro. Os dois pacotes — Essencial por R$ 450 e Profissional por R$ 750 — são pagamento único, parcelável em 2x no Pix, com domínio .com.br e hospedagem do primeiro ano inclusos, e a página fica pronta em 3 a 5 dias úteis.
+    <br><br>
+    <strong>Depois do primeiro ano</strong>, só a renovação do domínio (~R$ 40/ano direto no Registro.br). Manutenção avulsa a partir de R$ 80.
+  </p>
+</section>
+
+<!-- PROVA SOCIAL: sem depoimento, case ou número de clientes até existir
+     trabalho publicado e autorizado. Quando houver, a seção entra aqui. -->
+
+<!-- FAQ -->
+<section class="faq section-padding" id="faq" aria-labelledby="faq-titulo">
+  <div style="text-align: center;" class="reveal">
+    <div class="section-tag" style="justify-content: center;">Perguntas frequentes</div>
+    <h2 class="section-title" id="faq-titulo" style="margin: 0 auto;">Dúvidas de quem <em>faz unha</em>.</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-man-1" type="button" aria-expanded="false" aria-controls="faq-a-man-1">
+        Preciso ter salão para ter uma página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-man-1" role="region" aria-labelledby="faq-q-man-1">
+        <div class="faq-a-inner">Não. A maior parte das manicures atende em casa, em espaço compartilhado ou em domicílio, e a página funciona igual — na verdade ajuda ainda mais, porque é onde você explica exatamente como e onde atende sem precisar contar de novo em cada conversa.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-man-2" type="button" aria-expanded="false" aria-controls="faq-a-man-2">
+        Dá para mostrar a tabela de preços na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-man-2" role="region" aria-labelledby="faq-q-man-2">
+        <div class="faq-a-inner">Dá, e é o que mais economiza o seu tempo. A tabela lista serviço, valor e duração média. Se você preferir não abrir o valor de algum serviço mais variável (alongamento, por exemplo), a gente coloca "sob consulta" e o botão de WhatsApp do lado.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-man-3" type="button" aria-expanded="false" aria-controls="faq-a-man-3">
+        Quantas fotos de unhas eu preciso mandar?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-man-3" role="region" aria-labelledby="faq-q-man-3">
+        <div class="faq-a-inner">De 8 a 12 já monta uma galeria bonita. Podem ser as mesmas do Instagram — eu trato e otimizo pra carregar rápido no celular. O importante é variar os tipos de trabalho: gel, francesinha, alongamento, decorada, pé. Assim a cliente encontra o que ela quer.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-man-4" type="button" aria-expanded="false" aria-controls="faq-a-man-4">
+        A página faz o agendamento sozinha, com calendário?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-man-4" role="region" aria-labelledby="faq-q-man-4">
+        <div class="faq-a-inner">O agendamento acontece no WhatsApp. A página mostra seus horários e leva a cliente pro seu número com a mensagem já escrita, incluindo o serviço que ela estava olhando. Sistema de calendário com reserva automática é outro tipo de projeto — se for isso que você quer, me chama que a gente conversa sobre o formato.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-man-5" type="button" aria-expanded="false" aria-controls="faq-a-man-5">
+        E se eu mudar meus preços daqui a uns meses?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-man-5" role="region" aria-labelledby="faq-q-man-5">
+        <div class="faq-a-inner">Manutenção é avulsa: R$ 80 para até 2 alterações simples (trocar valores é uma delas) ou R$ 150 para até 5 alterações ou 1 seção nova. Sem contrato e sem mensalidade — você paga só quando precisar mexer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" aria-labelledby="cta-titulo">
+  <div class="cta-bg-text">unhas</div>
+  <div class="cta-final-content">
+    <div class="cta-final-tag reveal">→ Próximos passos</div>
+    <h2 class="cta-final-title reveal" id="cta-titulo">
+      Bora tirar seu trabalho<br>
+      <em>do fundo do feed?</em>
+    </h2>
+    <p class="cta-final-sub reveal">Manda uma mensagem no WhatsApp contando como você atende hoje. A primeira conversa é sem compromisso e já dá pra saber qual pacote faz sentido.</p>
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20manicure%20e%20quero%20conversar%20sobre%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
+      Conversar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+        <span>Studio<em>Web</em></span>
+      </div>
+      <p class="footer-tagline">Landing pages que convertem visitantes em clientes. Pra autônomos e pequenos negócios que merecem destaque online.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="/">Home</a>
+      <a href="/#processo">Processo</a>
+      <a href="/#precos">Preços</a>
+      <a href="/#portfolio">Portfólio</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5521991088053" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/studiowebnit/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:studiowebniteroi@gmail.com">E-mail</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© <span id="ano">2026</span> Studio Web · Niterói/RJ — Todos os direitos reservados</div>
+    <div>Feito com <span style="color: var(--orange)">♥</span> e muita atenção aos detalhes</div>
+  </div>
+</footer>
+
+<!-- Dados estruturados. O negócio não é redeclarado aqui: os nós apontam para
+     o @id ".../#business" definido no index.html. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/#webpage",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/",
+      "name": "Landing page para manicure em Niterói",
+      "description": "Página própria para manicure e nail designer: tabela de preços, galeria de unhas e agendamento direto no WhatsApp. No ar em 3 a 5 dias, a partir de R$ 450.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.studiowebniteroi.com.br/#website"
+      },
+      "publisher": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "about": {
+        "@id": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/#service"
+      },
+      "primaryImageOfPage": "https://www.studiowebniteroi.com.br/logo.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/#service",
+      "name": "Criação de landing page para manicure",
+      "serviceType": "Criação de landing page para manicure e nail designer",
+      "description": "Landing page de página única para manicures e nail designers, com tabela de serviços e preços, galeria de unhas, informações de atendimento em domicílio e botões de agendamento pelo WhatsApp. Pagamento único, sem mensalidade, entrega em 3 a 5 dias úteis.",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/",
+      "provider": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Niterói" },
+        { "@type": "City", "name": "São Gonçalo" },
+        { "@type": "City", "name": "Maricá" },
+        { "@type": "City", "name": "Rio de Janeiro" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "price": "450",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 4 seções com tabela de serviços, integração com WhatsApp em todos os botões, design mobile-first, domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        },
+        {
+          "@type": "Offer",
+          "name": "Profissional",
+          "price": "750",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 7 seções, incluindo galeria de unhas com scroll horizontal, FAQ interativo e métricas básicas de clique. Domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Studio Web",
+          "item": "https://www.studiowebniteroi.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Landing page para manicure",
+          "item": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-manicure/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Preciso ter salão para ter uma página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. A maior parte das manicures atende em casa, em espaço compartilhado ou em domicílio, e a página funciona igual — na verdade ajuda ainda mais, porque é onde você explica exatamente como e onde atende sem precisar contar de novo em cada conversa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá para mostrar a tabela de preços na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá, e é o que mais economiza o seu tempo. A tabela lista serviço, valor e duração média. Se você preferir não abrir o valor de algum serviço mais variável (alongamento, por exemplo), a gente coloca \"sob consulta\" e o botão de WhatsApp do lado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quantas fotos de unhas eu preciso mandar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De 8 a 12 já monta uma galeria bonita. Podem ser as mesmas do Instagram — eu trato e otimizo pra carregar rápido no celular. O importante é variar os tipos de trabalho: gel, francesinha, alongamento, decorada, pé. Assim a cliente encontra o que ela quer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A página faz o agendamento sozinha, com calendário?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O agendamento acontece no WhatsApp. A página mostra seus horários e leva a cliente pro seu número com a mensagem já escrita, incluindo o serviço que ela estava olhando. Sistema de calendário com reserva automática é outro tipo de projeto — se for isso que você quer, me chama que a gente conversa sobre o formato."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se eu mudar meus preços daqui a uns meses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manutenção é avulsa: R$ 80 para até 2 alterações simples (trocar valores é uma delas) ou R$ 150 para até 5 alterações ou 1 seção nova. Sem contrato e sem mensalidade — você paga só quando precisar mexer."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/script.js"></script>
+</body>
+</html>
