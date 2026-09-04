@@ -24,16 +24,39 @@ body {
   color: var(--white);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
 }
 
-a { color: inherit; text-decoration: none; cursor: none; }
-button { cursor: none; }
+a { color: inherit; text-decoration: none; }
+
+/* O cursor nativo só é escondido quando o JS está vivo pra desenhar o
+   substituto. Sem JS o usuário ficaria sem ponteiro nenhum. */
+html.js body,
+html.js a,
+html.js button { cursor: none; }
+
+.cursor, .cursor-dot { display: none; }
+html.js .cursor, html.js .cursor-dot { display: block; }
 
 @media (hover: none) and (pointer: coarse) {
-  body, a, button { cursor: auto; }
+  html.js body, html.js a, html.js button { cursor: auto; }
   .cursor, .cursor-dot { display: none !important; }
 }
+
+/* ── SKIP LINK ── */
+.skip-link {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 300;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 0 0 10px 10px;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: translate(-50%, 0); }
 
 /* ── CUSTOM CURSOR ── */
 .cursor {
@@ -522,7 +545,7 @@ section { position: relative; }
   flex-shrink: 0;
   margin-top: 2px;
 }
-.problem-text strong {
+.problem-title {
   font-size: 1.05rem;
   font-weight: 600;
   display: block;
@@ -1285,4 +1308,9 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
     opacity: 1 !important;
     transform: none !important;
   }
+
+  /* animateCursor() nao roda aqui, entao o anel ficaria parado na tela.
+     Some com o cursor customizado e devolve o ponteiro do sistema. */
+  .cursor, .cursor-dot { display: none !important; }
+  html.js body, html.js a, html.js button { cursor: auto !important; }
 }

@@ -78,14 +78,20 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     document.querySelectorAll('.faq-item.open').forEach(i => {
       i.classList.remove('open');
       i.querySelector('.faq-a').style.maxHeight = '0';
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
     });
 
     if (!isOpen) {
       item.classList.add('open');
       answer.style.maxHeight = inner.scrollHeight + 'px';
+      btn.setAttribute('aria-expanded', 'true');
     }
   });
 });
+
+// Ano do rodapé
+const ano = document.getElementById('ano');
+if (ano) ano.textContent = new Date().getFullYear();
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
