@@ -20,7 +20,9 @@ Quatro arquivos, todos na raiz: `index.html`, `style.css`, `script.js`, `logo.pn
 
 ## Convenções que importam
 
-**Os links de WhatsApp são montados em runtime.** Todos os CTAs do `index.html` usam o placeholder literal `https://wa.me/WHATSAPP_NUMBER?text=...`; o `script.js` reescreve todos os `a[href*="wa.me/"]` no carregamento, substituindo pela constante `WHATSAPP_NUMBER` no topo do `script.js`. Para trocar o número, edite só essa constante — nunca cole um número real no HTML, porque ele será sobrescrito de qualquer forma.
+**O número de WhatsApp fica no HTML, escrito por extenso.** Os 6 links `wa.me/` do `index.html` (botão flutuante, 2 cards de preço, portfólio, CTA final e rodapé) trazem o número real. O `script.js` continua reescrevendo todos os `a[href*="wa.me/"]` no carregamento a partir da constante `WHATSAPP_NUMBER`, mas agora como **normalizador**: para trocar o número, edite a constante *e* rode um find/replace no HTML.
+
+Até 09/2026 o HTML usava o placeholder `wa.me/WHATSAPP_NUMBER` e só o JS injetava o número. Não volte a esse padrão: crawlers de IA (GPTBot, ClaudeBot, PerplexityBot) e scrapers de preview de link não executam JavaScript, então o site ficava sem nenhuma forma de contato para eles — e sem NAP para o SEO local.
 
 **A ordem das seções no `index.html`** é nav → hero → marquee → problem/solution → processo → precos → portfolio → faq → cta-final → footer. Os links da nav e do footer são âncoras (`#processo`, `#precos`, `#portfolio`, `#faq`); uma seção nova que precise ser navegável exige um `id` e âncoras correspondentes tanto na nav *quanto* na coluna de navegação do footer.
 

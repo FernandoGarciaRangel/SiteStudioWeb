@@ -1,3 +1,7 @@
+// O número real fica no HTML, não aqui: crawlers de IA e scrapers de preview
+// de link não executam JavaScript, e sem o número no markup o site não tem
+// forma de contato para eles. Este bloco virou normalizador — mantém os 6
+// links em dia com a constante caso o número mude.
 const WHATSAPP_NUMBER = '5521991088053';
 
 document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
@@ -24,7 +28,7 @@ function animateCursor() {
   cursor.style.top = cursorY + 'px';
   requestAnimationFrame(animateCursor);
 }
-animateCursor();
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) animateCursor();
 
 document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
