@@ -4,8 +4,26 @@
 // links em dia com a constante caso o número mude.
 const WHATSAPP_NUMBER = '5521991088053';
 
+// De onde partiu o clique — é o que diz qual CTA converte.
+const origemDoLink = (link) => {
+  if (link.classList.contains('wa-fab')) return 'botao-flutuante';
+  if (link.closest('footer')) return 'rodape';
+  const secao = link.closest('section');
+  if (secao) return secao.id || secao.className.trim().split(/\s+/)[0];
+  return 'outro';
+};
+
 document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
   link.href = link.href.replace(/wa\.me\/[^?]+/, `wa.me/${WHATSAPP_NUMBER}`);
+
+  // Dispara no provedor que estiver instalado; sem nenhum, não faz nada.
+  link.addEventListener('click', () => {
+    const origem = origemDoLink(link);
+    if (window.plausible) window.plausible('WhatsApp', { props: { origem } });
+    if (window.umami) window.umami.track('whatsapp', { origem });
+    if (window.va) window.va('event', { name: 'whatsapp', origem });
+    if (window.gtag) window.gtag('event', 'whatsapp_click', { origem });
+  });
 });
 
 // Custom cursor. Só roda em ponteiro fino e sem pedido de movimento reduzido —
