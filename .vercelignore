@@ -1,0 +1,7 @@
+# Arquivos que ficam no repositório mas NÃO devem ir para o site publicado.
+# Deploy estático na Vercel serve tudo que está no repo: sem esta lista, o
+# CLAUDE.md respondia 200 em https://www.studiowebniteroi.com.br/CLAUDE.md
+# e, com o robots.txt liberando tudo, era indexável.
+CLAUDE.md
+PENDENCIAS.md
+.vscode/
