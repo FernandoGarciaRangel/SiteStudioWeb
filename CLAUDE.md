@@ -66,4 +66,4 @@ Publicado na **Vercel** como arquivos estáticos puros, a partir da branch `main
 
 Esse endereço aparece em cinco lugares que precisam continuar idênticos entre si, caractere por caractere: `<link rel="canonical">`, `og:url`, `og:image`, `twitter:image` e as URLs dentro do bloco JSON-LD no fim do `index.html` (mais o `robots.txt` e o `sitemap.xml`). Se o domínio mudar, todos mudam juntos.
 
-Não use `studioweb.com.br` — é um domínio diferente, que não resolve. Ele constava aqui e nas meta tags por engano, o que deixava o preview de link quebrado em toda partilha no WhatsApp.
+Este é o único domínio do projeto. Existe um `studioweb.com.br` parecido que **é de terceiros** — não é nosso e nunca deve aparecer no código; ele já constou nas meta tags por engano, apontando `og:image` e `og:url` para um domínio que não controlamos.
