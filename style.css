@@ -1386,7 +1386,8 @@ footer {
   color: var(--orange);
   margin-bottom: 20px;
 }
-.footer-col a {
+.footer-col a,
+.footer-col span[aria-current] {
   display: block;
   color: var(--gray-300);
   font-size: 0.9rem;
@@ -1394,6 +1395,8 @@ footer {
   transition: color 0.2s;
 }
 .footer-col a:hover { color: var(--white); }
+/* A página em que o visitante já está não vira link. */
+.footer-col span[aria-current] { color: var(--gray-500); }
 
 .footer-bottom {
   padding-top: 32px;

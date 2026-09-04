@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Marca que o JS está vivo. As animações de entrada (.reveal, .hero-title .word)
+     e o cursor customizado só se aplicam sob html.js, então sem JS a página
+     renderiza inteira e visível em vez de ficar em branco. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Landing page para maquiadora em Niterói — Studio Web</title>
+<meta name="description" content="Página para maquiadora de noiva, formatura e ensaio: portfólio por tipo de evento, pacotes com madrinhas e prova, reserva de data pelo WhatsApp. A partir de R$ 450.">
+
+<link rel="canonical" href="https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Web">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Niterói">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Web">
+<meta property="og:title" content="Landing page para maquiadora — Studio Web">
+<meta property="og:description" content="Portfólio por tipo de evento, pacotes de noiva com madrinhas e prova, reserva de data pelo WhatsApp. A partir de R$ 450, pagamento único.">
+<meta property="og:image" content="https://www.studiowebniteroi.com.br/logo.png">
+<meta property="og:image:width" content="1092">
+<meta property="og:image:height" content="1092">
+<meta property="og:image:alt" content="Studio Web — landing pages para autônomos em Niterói">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Landing page para maquiadora — Studio Web">
+<meta name="twitter:description" content="Portfólio por tipo de evento, pacotes de noiva e reserva de data pelo WhatsApp. A partir de R$ 450, sem mensalidade.">
+<meta name="twitter:image" content="https://www.studiowebniteroi.com.br/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/5521991088053?text=Olá!%20Sou%20maquiadora%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<header>
+<nav id="nav" aria-label="Navegação principal">
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Studio Web" width="32" height="32" decoding="async">
+    <span>Studio</span><span>Web</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#processo">Processo</a>
+    <a href="/#precos">Preços</a>
+    <a href="/#portfolio">Portfólio</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="/#precos" class="nav-cta">Quero a minha</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+</header>
+
+<main id="conteudo">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <nav class="crumbs" aria-label="Trilha de navegação">
+    <a href="/">Studio Web</a><span aria-hidden="true">/</span>Landing page para maquiadora
+  </nav>
+
+  <div class="hero-tag">Para maquiadoras · Niterói/RJ</div>
+
+  <h1 class="hero-title" id="hero-titulo">
+    <span class="word" style="animation-delay: 0.4s">Quem</span>
+    <span class="word" style="animation-delay: 0.5s">casa</span>
+    <span class="word" style="animation-delay: 0.6s">em</span>
+    <span class="word" style="animation-delay: 0.7s"><em>outubro</em></span><br>
+    <span class="word" style="animation-delay: 0.8s">te</span>
+    <span class="word" style="animation-delay: 0.9s">escolhe</span>
+    <span class="word" style="animation-delay: 1s">em</span>
+    <span class="word" style="animation-delay: 1.1s"><span class="accent">março.</span></span>
+  </h1>
+
+  <p class="hero-sub">
+    Evento se fecha com meses de antecedência, e a noiva compara três ou quatro profissionais antes de decidir. Sua página é onde ela vê o trabalho em alta, entende o pacote e reserva a data.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20maquiadora%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary">
+      Falar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <a href="/#precos" class="btn-secondary">
+      Ver pacotes e preços
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3-5</div>
+      <div class="stat-label">Dias para entrega</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Mobile first</div>
+    </div>
+    <div>
+      <div class="stat-num">R$450</div>
+      <div class="stat-label">A partir de</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">Mensalidade</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR DO NICHO -->
+<section class="problem section-padding" id="dor" aria-labelledby="dor-titulo">
+  <div style="max-width: 850px;">
+    <div class="section-tag reveal">O que trava um orçamento de evento</div>
+    <h2 class="section-title reveal" id="dor-titulo">Casamento não se fecha <em>às onze da noite</em>, no direct.</h2>
+    <p class="section-sub reveal">Entre o "amei seu trabalho" e a data reservada costuma travar em três pontos:</p>
+
+    <div class="problem-list reveal">
+      <div class="problem-item">
+        <div class="problem-icon">01</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Orçamento de noiva não cabe num preço só</h3>
+          <p>É você, mais as madrinhas, mais a mãe da noiva, com ou sem prova de maquiagem, com deslocamento até o local. Cada combinação vira uma conta refeita na mão, de conversa em conversa.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">02</div>
+        <div class="problem-text">
+          <h3 class="problem-title">A escolha é pelo olho, e o feed não deixa comparar</h3>
+          <p>Ela procura pele parecida com a dela, luz de igreja, maquiagem que aguentou até o fim da festa. No perfil isso está picado entre reels e stories que sumiram.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">03</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Ninguém reserva uma data insubstituível no escuro</h3>
+          <p>Ela casa uma vez. O medo é você atrasar, sumir ou aparecer com outra pessoa no lugar. Sem nada escrito sobre sinal, horário de chegada e o que acontece se algo mudar, ela segue procurando.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUEM ESSA PÁGINA ATENDE -->
+<section class="doc-section alt section-padding" id="quem" aria-labelledby="quem-titulo">
+  <div class="reveal">
+    <div class="section-tag">Quem essa página atende</div>
+    <h2 class="section-title" id="quem-titulo">Da que atende em casa à que <em>aluga cadeira</em> em salão.</h2>
+  </div>
+
+  <div class="prose reveal">
+    <p>Maquiagem é trabalho de evento, e o formato muda muito de profissional pra profissional. Tem quem viva de noiva, quem faça formatura e quinze anos o ano inteiro, quem atenda ensaio fotográfico e social durante a semana. A página é montada em cima do que você faz de verdade, e não num molde de "profissional de beleza" que serve pra todo mundo e pra ninguém.</p>
+
+    <p><strong>Atendo também maquiadora que trabalha dentro de salão de beleza</strong> — como parte da equipe ou alugando cadeira. Nesse caso a página é sua, não do salão: leva o seu nome, o seu portfólio e o seu WhatsApp, e informa o endereço onde você atende hoje. Se amanhã você trocar de salão ou passar a atender por conta própria, muda o endereço e o resto continua no lugar.</p>
+
+    <p>Os tipos de trabalho que costumam virar seção ou filtro de galeria:</p>
+  </div>
+
+  <ul class="chip-list reveal">
+    <li class="chip">Noiva</li>
+    <li class="chip">Madrinha</li>
+    <li class="chip">Mãe da noiva</li>
+    <li class="chip">Formatura</li>
+    <li class="chip">15 anos</li>
+    <li class="chip">Ensaio fotográfico</li>
+    <li class="chip">Aniversário</li>
+    <li class="chip">Social e corporativo</li>
+  </ul>
+</section>
+
+<!-- O QUE A PÁGINA LEVA -->
+<section class="processo section-padding" id="inclui" aria-labelledby="inclui-titulo">
+  <div class="reveal">
+    <div class="section-tag">O que entra na sua página</div>
+    <h2 class="section-title" id="inclui-titulo">Feita pra fechar <em>data</em>, não pra tirar dúvida.</h2>
+    <p class="section-sub">Quatro blocos que respondem, em ordem, o que a cliente de evento precisa saber antes de te chamar.</p>
+  </div>
+
+  <div class="processo-grid reveal">
+    <div class="proc-step">
+      <div class="proc-num">01</div>
+      <h3 class="proc-title">Portfólio separado por evento</h3>
+      <p class="proc-desc">Noiva num bloco, formatura em outro, ensaio em outro. Ela vê logo o tipo de trabalho que procura, em vez de rolar tudo misturado torcendo pra achar algo parecido.</p>
+      <div class="proc-time">Onde a decisão acontece</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">02</div>
+      <h3 class="proc-title">Pacotes já montados</h3>
+      <p class="proc-desc">Noiva sozinha, noiva com madrinhas, com ou sem prova de maquiagem, mãe da noiva à parte. As combinações que você já vende, escritas de uma vez.</p>
+      <div class="proc-time">Sem refazer a conta</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">03</div>
+      <h3 class="proc-title">Antecedência, sinal e reserva</h3>
+      <p class="proc-desc">Com quanto tempo você costuma fechar, como a data fica reservada e o que você pede de sinal. É o bloco que tira o medo de quem está confiando o dia do casamento a você.</p>
+      <div class="proc-time">Segurança dos dois lados</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04</div>
+      <h3 class="proc-title">Deslocamento e horário</h3>
+      <p class="proc-desc">Até onde você vai, como cobra a ida ao local do evento, se atende de madrugada em dia de noiva e o que a cliente precisa ter no quarto quando você chegar.</p>
+      <div class="proc-time">Combinado antes</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES (resumo) -->
+<section class="pricing section-padding" id="pacotes" aria-labelledby="pacotes-titulo">
+  <div class="pricing-header reveal">
+    <div class="section-tag" style="justify-content: center;">Investimento</div>
+    <h2 class="section-title" id="pacotes-titulo" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
+  </div>
+  <p class="section-sub pricing-sub-center reveal">São duas opções, as duas em pagamento único e parcelável em 2x no Pix. O domínio .com.br e a hospedagem do primeiro ano entram nas duas.</p>
+
+  <div class="price-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Essencial</div>
+      <div class="price-tagline">Pra quem faz social e formatura o ano todo</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">450</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 225</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 4 seções, com os pacotes de maquiagem</div>
+        <div class="price-feature">WhatsApp em todos os botões</div>
+        <div class="price-feature">Design 100% mobile-first</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta outline">Ver o Essencial completo</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-name">Profissional</div>
+      <div class="price-tagline">O indicado pra quem atende noiva</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">750</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 375</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 7 seções, com portfólio dividido por evento</div>
+        <div class="price-feature">Galeria com scroll horizontal</div>
+        <div class="price-feature">FAQ interativo com accordion</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Métricas básicas de clique</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta primary">Ver o Profissional completo</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">
+    Quem trabalha com noiva costuma ir de Profissional, porque é o pacote que tem a galeria dividida por tipo de evento — que é onde a cliente decide. O Studio Web fica em Niterói/RJ e atende maquiadoras de Niterói, São Gonçalo, Maricá e Rio de Janeiro, com a página pronta em 3 a 5 dias úteis.
+    <br><br>
+    <strong>Passado o primeiro ano</strong>, resta a renovação do domínio (~R$ 40/ano direto no Registro.br). Manutenção avulsa a partir de R$ 80.
+  </p>
+</section>
+
+<!-- PROVA SOCIAL: nenhum depoimento de noiva, nome de cliente, número de
+     eventos atendidos ou nota de avaliação até existir trabalho publicado e
+     autorizado. É a seção mais tentadora de inventar nesta página — quando
+     houver material real e autorização de imagem, ela entra aqui. -->
+
+<!-- FAQ -->
+<section class="faq section-padding" id="faq" aria-labelledby="faq-titulo">
+  <div style="text-align: center;" class="reveal">
+    <div class="section-tag" style="justify-content: center;">Perguntas frequentes</div>
+    <h2 class="section-title" id="faq-titulo" style="margin: 0 auto;">Dúvidas de quem <em>trabalha com evento</em>.</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-maq-1" type="button" aria-expanded="false" aria-controls="faq-a-maq-1">
+        Dá pra montar pacote de noiva com madrinhas e prova na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-maq-1" role="region" aria-labelledby="faq-q-maq-1">
+        <div class="faq-a-inner">Dá, e é o bloco que mais poupa conversa. A gente escreve as combinações que você já vende — noiva sozinha, noiva com duas ou três madrinhas, prova de maquiagem inclusa ou cobrada à parte, mãe da noiva como adicional. Se o valor final depende do número de pessoas e da distância, o pacote fica com "a partir de" e um botão que já abre o WhatsApp perguntando data e local.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-maq-2" type="button" aria-expanded="false" aria-controls="faq-a-maq-2">
+        A cliente consegue ver se eu tenho a data dela livre?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-maq-2" role="region" aria-labelledby="faq-q-maq-2">
+        <div class="faq-a-inner">Agenda ao vivo, não — isso é sistema de reserva, outro tipo de projeto. O que a página faz é explicar com quanto tempo você costuma fechar e como a data fica reservada, e mandar a cliente pro WhatsApp com a mensagem já perguntando a data. Você responde uma vez, sobre o dia dela, em vez de explicar o processo inteiro de novo.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-maq-3" type="button" aria-expanded="false" aria-controls="faq-a-maq-3">
+        Posso usar antes e depois no portfólio?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-maq-3" role="region" aria-labelledby="faq-q-maq-3">
+        <div class="faq-a-inner">Pode — em maquiagem o antes e depois mostra técnica, não promessa de resultado, e é o que a cliente mais procura. Duas coisas importam: ter autorização de imagem de quem aparece, principalmente de noiva, e variar os tons de pele e os tipos de olho. Quem não se vê no portfólio assume que você não atende o rosto dela.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-maq-4" type="button" aria-expanded="false" aria-controls="faq-a-maq-4">
+        Eu atendo dentro de um salão. Faz sentido ter página própria?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-maq-4" role="region" aria-labelledby="faq-q-maq-4">
+        <div class="faq-a-inner">Faz, e é justamente quem mais ganha com isso. Trabalhando na equipe ou alugando cadeira, quem procura no Google acha o salão, não você. Com página própria a cliente chega pelo seu nome, vê o seu portfólio e fala no seu WhatsApp — e o endereço do salão aparece como o local onde você atende. Trocou de salão, troca o endereço: o resto é seu e continua de pé.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-maq-5" type="button" aria-expanded="false" aria-controls="faq-a-maq-5">
+        Como fica o deslocamento e o horário de madrugada?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-maq-5" role="region" aria-labelledby="faq-q-maq-5">
+        <div class="faq-a-inner">Do jeito que você já cobra — a página só escreve isso onde a cliente lê antes de perguntar. Costuma entrar até que distância você vai sem taxa, como funciona fora dessa área, se tem valor diferente pra sair de madrugada e o que você precisa encontrar no local: tomada perto, uma cadeira, luz de janela quando der.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" aria-labelledby="cta-titulo">
+  <div class="cta-bg-text">noivas</div>
+  <div class="cta-final-content">
+    <div class="cta-final-tag reveal">→ Próximos passos</div>
+    <h2 class="cta-final-title reveal" id="cta-titulo">
+      Bora ocupar as datas<br>
+      <em>da próxima temporada?</em>
+    </h2>
+    <p class="cta-final-sub reveal">Me chama no WhatsApp contando que tipo de evento você atende e como cobra hoje. A conversa inicial não compromete nada, e dela já sai o formato certo de página.</p>
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20maquiadora%20e%20quero%20conversar%20sobre%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
+      Conversar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+        <span>Studio<em>Web</em></span>
+      </div>
+      <p class="footer-tagline">Landing pages que convertem visitantes em clientes. Pra autônomos e pequenos negócios que merecem destaque online.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="/">Home</a>
+      <a href="/#processo">Processo</a>
+      <a href="/#precos">Preços</a>
+      <a href="/#portfolio">Portfólio</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="/criacao-de-site-em-niteroi/">Criação de site em Niterói</a>
+      <a href="/quanto-custa-uma-landing-page/">Quanto custa uma landing page</a>
+      <a href="/landing-page-para-manicure/">Para manicure</a>
+      <span aria-current="page">Para maquiadora</span>
+      <a href="/landing-page-para-fotografo/">Para fotógrafo</a>
+      <a href="/landing-page-para-personal-trainer/">Para personal trainer</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5521991088053" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/studiowebnit/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:studiowebniteroi@gmail.com">E-mail</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© <span id="ano">2026</span> Studio Web · Niterói/RJ — Todos os direitos reservados</div>
+    <div>Feito com <span style="color: var(--orange)">♥</span> e muita atenção aos detalhes</div>
+  </div>
+</footer>
+
+<!-- Dados estruturados. O negócio não é redeclarado aqui: os nós apontam para
+     o @id ".../#business" definido no index.html. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/#webpage",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/",
+      "name": "Landing page para maquiadora em Niterói",
+      "description": "Página para maquiadora de noiva, formatura e ensaio: portfólio por tipo de evento, pacotes com madrinhas e prova, reserva de data pelo WhatsApp. A partir de R$ 450.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.studiowebniteroi.com.br/#website"
+      },
+      "publisher": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "about": {
+        "@id": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/#service"
+      },
+      "primaryImageOfPage": "https://www.studiowebniteroi.com.br/logo.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/#service",
+      "name": "Criação de landing page para maquiadora",
+      "serviceType": "Criação de landing page para maquiadora de noiva e eventos",
+      "description": "Landing page de página única para maquiadoras que atendem noiva, formatura, 15 anos, ensaio fotográfico e social, incluindo maquiadoras que trabalham dentro de salão de beleza. Traz portfólio separado por tipo de evento, pacotes com madrinhas e prova de maquiagem, regras de antecedência, sinal e deslocamento, e botões de reserva pelo WhatsApp. Pagamento único, sem mensalidade, entrega em 3 a 5 dias úteis.",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/",
+      "provider": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Niterói" },
+        { "@type": "City", "name": "São Gonçalo" },
+        { "@type": "City", "name": "Maricá" },
+        { "@type": "City", "name": "Rio de Janeiro" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "price": "450",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 4 seções com os pacotes de maquiagem, integração com WhatsApp em todos os botões, design mobile-first, domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        },
+        {
+          "@type": "Offer",
+          "name": "Profissional",
+          "price": "750",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 7 seções, com portfólio dividido por tipo de evento em galeria com scroll horizontal, FAQ interativo e métricas básicas de clique. Domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Studio Web",
+          "item": "https://www.studiowebniteroi.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Landing page para maquiadora",
+          "item": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Dá pra montar pacote de noiva com madrinhas e prova na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá, e é o bloco que mais poupa conversa. A gente escreve as combinações que você já vende — noiva sozinha, noiva com duas ou três madrinhas, prova de maquiagem inclusa ou cobrada à parte, mãe da noiva como adicional. Se o valor final depende do número de pessoas e da distância, o pacote fica com \"a partir de\" e um botão que já abre o WhatsApp perguntando data e local."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A cliente consegue ver se eu tenho a data dela livre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Agenda ao vivo, não — isso é sistema de reserva, outro tipo de projeto. O que a página faz é explicar com quanto tempo você costuma fechar e como a data fica reservada, e mandar a cliente pro WhatsApp com a mensagem já perguntando a data. Você responde uma vez, sobre o dia dela, em vez de explicar o processo inteiro de novo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso usar antes e depois no portfólio?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pode — em maquiagem o antes e depois mostra técnica, não promessa de resultado, e é o que a cliente mais procura. Duas coisas importam: ter autorização de imagem de quem aparece, principalmente de noiva, e variar os tons de pele e os tipos de olho. Quem não se vê no portfólio assume que você não atende o rosto dela."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Eu atendo dentro de um salão. Faz sentido ter página própria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Faz, e é justamente quem mais ganha com isso. Trabalhando na equipe ou alugando cadeira, quem procura no Google acha o salão, não você. Com página própria a cliente chega pelo seu nome, vê o seu portfólio e fala no seu WhatsApp — e o endereço do salão aparece como o local onde você atende. Trocou de salão, troca o endereço: o resto é seu e continua de pé."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como fica o deslocamento e o horário de madrugada?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Do jeito que você já cobra — a página só escreve isso onde a cliente lê antes de perguntar. Costuma entrar até que distância você vai sem taxa, como funciona fora dessa área, se tem valor diferente pra sair de madrugada e o que você precisa encontrar no local: tomada perto, uma cadeira, luz de janela quando der."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/script.js"></script>
+</body>
+</html>

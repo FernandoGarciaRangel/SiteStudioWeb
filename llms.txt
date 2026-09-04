@@ -24,6 +24,9 @@
   bairros e cidades atendidos, e como funciona o atendimento remoto.
 - [Landing page para manicure](https://www.studiowebniteroi.com.br/landing-page-para-manicure/):
   agendamento pelo WhatsApp, tabela de serviços e galeria de trabalhos.
+- [Landing page para maquiadora](https://www.studiowebniteroi.com.br/landing-page-para-maquiadora/):
+  maquiagem de noiva, formatura e ensaio; orçamento por pacote e agenda com
+  meses de antecedência. Atende também quem trabalha dentro de salão.
 - [Landing page para fotógrafo](https://www.studiowebniteroi.com.br/landing-page-para-fotografo/):
   galeria, pacotes de ensaio, prazo de entrega e direitos de imagem.
 - [Landing page para personal trainer](https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/):
