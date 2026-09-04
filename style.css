@@ -46,7 +46,9 @@ a { color: inherit; text-decoration: none; }
 
 /* ── SKIP LINK ── */
 .skip-link {
-  position: absolute;
+  /* fixed, não absolute: com absolute ele fica preso ao topo do documento e
+     sai da tela se o usuário voltar nele por Shift+Tab já tendo rolado. */
+  position: fixed;
   top: 0; left: 50%;
   transform: translate(-50%, -120%);
   z-index: 300;
@@ -837,9 +839,13 @@ section { position: relative; }
 
 .pricing-note {
   text-align: center;
-  margin-top: 48px;
+  /* max-width porque este parágrafo cresceu: sem ele a linha ia de ponta a
+     ponta da tela em monitor largo. */
+  max-width: 720px;
+  margin: 48px auto 0;
   color: var(--gray-500);
   font-size: 0.85rem;
+  line-height: 1.6;
   position: relative;
   z-index: 1;
 }
