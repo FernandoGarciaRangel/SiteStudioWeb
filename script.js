@@ -35,29 +35,37 @@ document.querySelectorAll('a, button').forEach(el => {
   el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
 });
 
+// Nav e FAQ são opcionais: a 404 não tem nenhum dos dois, e páginas futuras
+// podem não ter também. Sem as guardas, um getElementById nulo derruba o
+// resto do arquivo.
+
 // Nav scroll
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 50);
-});
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
 
 // Hamburger menu
 const burger = document.getElementById('nav-burger');
 const navLinks = document.querySelector('.nav-links');
 
-burger.addEventListener('click', () => {
-  const isOpen = burger.classList.toggle('open');
-  navLinks.classList.toggle('open', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    burger.classList.remove('open');
-    navLinks.classList.remove('open');
-    document.body.style.overflow = '';
+if (burger && navLinks) {
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('open');
+    navLinks.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('open');
+      navLinks.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+}
 
 // FAQ with dynamic height
 document.querySelectorAll('.faq-q').forEach(btn => {
