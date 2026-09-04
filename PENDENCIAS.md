@@ -7,13 +7,20 @@ Este arquivo fica fora do deploy (ver `.vercelignore`).
 
 ## Onde estamos
 
-Das 36 correções do diagnóstico, **28 estão aplicadas e mescladas na `main`** —
-tudo que era edição de arquivo no repositório, em 13 commits. O site foi de **1
-para 7 URLs indexáveis**.
+Das 36 correções do diagnóstico, **27 estão aplicadas**, em 14 commits — tudo
+que era edição de arquivo no repositório. O site foi de **1 para 7 URLs
+indexáveis**.
 
-O que ainda falta se divide em três grupos: o que depende de um clique no painel
-da Vercel, o que depende de você criar alguma coisa (imagem, conta, caso real), e
-duas decisões editoriais.
+Os **9 itens restantes** dependem de um clique no painel da Vercel, de você criar
+alguma coisa (imagem, conta, caso real), ou de uma decisão editorial. Um deles, o
+`7.1`, já está pronto no código e só espera você escolher o provedor de analytics.
+
+| grupo | itens |
+|---|---|
+| Aplicados no repositório | 27 |
+| Painel da Vercel | 2 — `0.2`, `0.4` |
+| Precisam de material ou conta sua | 6 — `2.4`, `2.5`, `4.3`, `4.4`, `4.7`, `6.4` |
+| Acompanhamento contínuo | 1 — `7.2` |
 
 > **Nada disso está publicado ainda.** A `main` local está à frente do GitHub. O
 > deploy só acontece no `git push`, e é ele que leva as 7 páginas ao ar.
