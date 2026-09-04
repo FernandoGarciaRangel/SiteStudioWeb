@@ -36,4 +36,8 @@ Quatro arquivos, todos na raiz: `index.html`, `style.css`, `script.js`, `logo.pn
 
 ## Deploy
 
-Publicado como arquivos estáticos puros (domínio alvo `studioweb.com.br`, usado nas URLs absolutas das meta tags Open Graph/Twitter). Se o domínio mudar, atualize também as tags `og:url`, `og:image` e `twitter:image`.
+Publicado na **Vercel** como arquivos estáticos puros, a partir da branch `main` deste repositório. O domínio canônico é **`https://www.studiowebniteroi.com.br/`** — com `www` e com barra final; o apex redireciona para ele.
+
+Esse endereço aparece em cinco lugares que precisam continuar idênticos entre si, caractere por caractere: `<link rel="canonical">`, `og:url`, `og:image`, `twitter:image` e as URLs dentro do bloco JSON-LD no fim do `index.html` (mais o `robots.txt` e o `sitemap.xml`). Se o domínio mudar, todos mudam juntos.
+
+Não use `studioweb.com.br` — é um domínio diferente, que não resolve. Ele constava aqui e nas meta tags por engano, o que deixava o preview de link quebrado em toda partilha no WhatsApp.
