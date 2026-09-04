@@ -28,18 +28,20 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-/* O cursor nativo só é escondido quando o JS está vivo pra desenhar o
-   substituto. Sem JS o usuário ficaria sem ponteiro nenhum. */
-html.js body,
-html.js a,
-html.js button { cursor: none; }
-
+/* O cursor customizado só existe quando o JS está vivo pra posicioná-lo e o
+   ponteiro é fino — a mesma condição que o script.js checa. Fora disso vale o
+   ponteiro nativo e as duas divs não aparecem (sem JS elas ficariam paradas
+   no canto superior esquerdo, e sem cursor:none o usuário ficaria sem
+   ponteiro nenhum). */
 .cursor, .cursor-dot { display: none; }
-html.js .cursor, html.js .cursor-dot { display: block; }
 
-@media (hover: none) and (pointer: coarse) {
-  html.js body, html.js a, html.js button { cursor: auto; }
-  .cursor, .cursor-dot { display: none !important; }
+@media (hover: hover) and (pointer: fine) {
+  html.js body,
+  html.js a,
+  html.js button { cursor: none; }
+
+  html.js .cursor,
+  html.js .cursor-dot { display: block; }
 }
 
 /* ── SKIP LINK ── */

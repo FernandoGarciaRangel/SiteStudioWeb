@@ -8,32 +8,41 @@ document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
   link.href = link.href.replace(/wa\.me\/[^?]+/, `wa.me/${WHATSAPP_NUMBER}`);
 });
 
-// Custom cursor
+// Custom cursor. Só roda em ponteiro fino e sem pedido de movimento reduzido —
+// no celular ele nem aparece, mas o requestAnimationFrame rodava assim mesmo,
+// gastando quadro a quadro de graça. O CSS devolve o ponteiro nativo nos dois
+// casos em que este bloco não roda.
 const cursor = document.querySelector('.cursor');
 const dot = document.querySelector('.cursor-dot');
-let mouseX = 0, mouseY = 0;
-let cursorX = 0, cursorY = 0;
+const cursorAtivo = cursor && dot
+  && matchMedia('(hover: hover) and (pointer: fine)').matches
+  && !matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.addEventListener('mousemove', (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  dot.style.left = mouseX + 'px';
-  dot.style.top = mouseY + 'px';
-});
+if (cursorAtivo) {
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
 
-function animateCursor() {
-  cursorX += (mouseX - cursorX) * 0.15;
-  cursorY += (mouseY - cursorY) * 0.15;
-  cursor.style.left = cursorX + 'px';
-  cursor.style.top = cursorY + 'px';
-  requestAnimationFrame(animateCursor);
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top = mouseY + 'px';
+  });
+
+  const animateCursor = () => {
+    cursorX += (mouseX - cursorX) * 0.15;
+    cursorY += (mouseY - cursorY) * 0.15;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(animateCursor);
+  };
+  animateCursor();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
 }
-if (!matchMedia('(prefers-reduced-motion: reduce)').matches) animateCursor();
-
-document.querySelectorAll('a, button').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-});
 
 // Nav e FAQ são opcionais: a 404 não tem nenhum dos dois, e páginas futuras
 // podem não ter também. Sem as guardas, um getElementById nulo derruba o
