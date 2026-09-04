@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Marca que o JS está vivo. As animações de entrada (.reveal, .hero-title .word)
+     e o cursor customizado só se aplicam sob html.js, então sem JS a página
+     renderiza inteira e visível em vez de ficar em branco. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Landing page para fotógrafo em Niterói — Studio Web</title>
+<meta name="description" content="Site de portfólio para fotógrafo: galeria em alta qualidade que carrega rápido, pacotes de ensaio, prazo de entrega e contato no WhatsApp. A partir de R$ 450.">
+
+<link rel="canonical" href="https://www.studiowebniteroi.com.br/landing-page-para-fotografo/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Web">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Niterói">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.studiowebniteroi.com.br/landing-page-para-fotografo/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Web">
+<meta property="og:title" content="Landing page para fotógrafo — Studio Web">
+<meta property="og:description" content="Galeria em alta qualidade que carrega rápido, pacotes de ensaio e prazo de entrega numa página só. A partir de R$ 450, pagamento único.">
+<meta property="og:image" content="https://www.studiowebniteroi.com.br/logo.png">
+<meta property="og:image:width" content="1092">
+<meta property="og:image:height" content="1092">
+<meta property="og:image:alt" content="Studio Web — landing pages para autônomos em Niterói">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Landing page para fotógrafo — Studio Web">
+<meta name="twitter:description" content="Galeria que faz jus às suas fotos, pacotes de ensaio e prazo de entrega. A partir de R$ 450, sem mensalidade.">
+<meta name="twitter:image" content="https://www.studiowebniteroi.com.br/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/5521991088053?text=Olá!%20Sou%20fotógrafo%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<header>
+<nav id="nav" aria-label="Navegação principal">
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Studio Web" width="32" height="32" decoding="async">
+    <span>Studio</span><span>Web</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#processo">Processo</a>
+    <a href="/#precos">Preços</a>
+    <a href="/#portfolio">Portfólio</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="/#precos" class="nav-cta">Quero a minha</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+</header>
+
+<main id="conteudo">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <nav class="crumbs" aria-label="Trilha de navegação">
+    <a href="/">Studio Web</a><span aria-hidden="true">/</span>Landing page para fotógrafo
+  </nav>
+
+  <div class="hero-tag">Para fotógrafos · Niterói/RJ</div>
+
+  <h1 class="hero-title" id="hero-titulo">
+    <span class="word" style="animation-delay: 0.4s">Seu</span>
+    <span class="word" style="animation-delay: 0.5s"><em>portfólio</em></span>
+    <span class="word" style="animation-delay: 0.6s">fora</span><br>
+    <span class="word" style="animation-delay: 0.7s">do</span>
+    <span class="word" style="animation-delay: 0.8s">recorte</span>
+    <span class="word" style="animation-delay: 0.9s">do</span>
+    <span class="word" style="animation-delay: 1s"><span class="accent">feed.</span></span>
+  </h1>
+
+  <p class="hero-sub">
+    Uma página onde a foto aparece do tamanho que merece, carrega rápido e vem acompanhada de pacote, prazo e botão de orçamento. O cliente decide ali mesmo.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20fotógrafo%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary">
+      Falar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <a href="/#precos" class="btn-secondary">
+      Ver pacotes e preços
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3-5</div>
+      <div class="stat-label">Dias para entrega</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Mobile first</div>
+    </div>
+    <div>
+      <div class="stat-num">R$450</div>
+      <div class="stat-label">A partir de</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">Mensalidade</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR DO NICHO -->
+<section class="problem section-padding" id="dor" aria-labelledby="dor-titulo">
+  <div style="max-width: 850px;">
+    <div class="section-tag reveal">O problema de quem fotografa</div>
+    <h2 class="section-title reveal" id="dor-titulo">Você vende <em>imagem</em>, e o Instagram entrega compressão.</h2>
+    <p class="section-sub reveal">Três coisas que atrapalham fotógrafo que só tem perfil e nada mais:</p>
+
+    <div class="problem-list reveal">
+      <div class="problem-item">
+        <div class="problem-icon">01</div>
+        <div class="problem-text">
+          <h3 class="problem-title">A rede social decide como sua foto aparece</h3>
+          <p>Recorte quadrado, compressão pesada, ordem cronológica. Seu melhor ensaio disputa espaço com o story de ontem e perde o que você passou horas tratando.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">02</div>
+        <div class="problem-text">
+          <h3 class="problem-title">"Quanto custa um ensaio?" sem contexto nenhum</h3>
+          <p>Quem pergunta não sabe quantas fotos vêm, quanto tempo dura, se tem troca de roupa, se locação está inclusa. Você explica tudo de novo, e o preço soa alto porque veio sozinho.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">03</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Prazo e direitos de imagem viram assunto tarde demais</h3>
+          <p>Quando entrega das fotos, uso comercial e autorização de imagem só aparecem depois do "fechado", sobra mal-entendido pros dois lados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE A PÁGINA LEVA -->
+<section class="processo section-padding" id="inclui" aria-labelledby="inclui-titulo">
+  <div class="reveal">
+    <div class="section-tag">O que entra na sua página</div>
+    <h2 class="section-title" id="inclui-titulo">A galeria <em>pesa mais</em> que qualquer texto.</h2>
+    <p class="section-sub">Por isso ela vem primeiro — e o resto da página existe pra transformar quem gostou em orçamento.</p>
+  </div>
+
+  <div class="processo-grid reveal">
+    <div class="proc-step">
+      <div class="proc-num">01</div>
+      <h3 class="proc-title">Galeria em primeiro lugar</h3>
+      <p class="proc-desc">Suas fotos grandes, no enquadramento que você escolheu, separadas por tipo de ensaio. Otimizadas pra abrir rápido no celular sem virar borrão.</p>
+      <div class="proc-time">O coração da página</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">02</div>
+      <h3 class="proc-title">Pacotes de ensaio</h3>
+      <p class="proc-desc">Gestante, newborn, casamento, aniversário, book, corporativo — cada um com duração, número de fotos tratadas e o que está incluso. Preço aberto ou sob consulta, você escolhe.</p>
+      <div class="proc-time">Contexto antes do preço</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">03</div>
+      <h3 class="proc-title">Prazo e forma de entrega</h3>
+      <p class="proc-desc">Quanto tempo leva a seleção, quantos dias até a galeria final, se vai por link ou pen drive, se tem prévia. Combinado escrito antes de fechar.</p>
+      <div class="proc-time">Sem cobrança ansiosa</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04</div>
+      <h3 class="proc-title">Direitos de imagem, claros</h3>
+      <p class="proc-desc">Uma seção explicando o uso das fotos: onde o cliente pode publicar, se você pode usar no portfólio e como funciona a autorização de imagem.</p>
+      <div class="proc-time">Combinado desde o início</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES (resumo) -->
+<section class="pricing section-padding" id="pacotes" aria-labelledby="pacotes-titulo">
+  <div class="pricing-header reveal">
+    <div class="section-tag" style="justify-content: center;">Investimento</div>
+    <h2 class="section-title" id="pacotes-titulo" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
+  </div>
+  <p class="section-sub pricing-sub-center reveal">Dois pacotes, pagamento único e parcelável em 2x no Pix. Domínio .com.br e hospedagem do primeiro ano inclusos.</p>
+
+  <div class="price-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Essencial</div>
+      <div class="price-tagline">Pra quem quer um cartão de visita direto</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">450</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 225</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 4 seções, com seleção de fotos</div>
+        <div class="price-feature">WhatsApp em todos os botões</div>
+        <div class="price-feature">Design 100% mobile-first</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta outline">Ver o Essencial completo</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-name">Profissional</div>
+      <div class="price-tagline">O indicado pra portfólio de fotografia</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">750</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 375</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 7 seções, incluindo galeria completa</div>
+        <div class="price-feature">Galeria com scroll horizontal</div>
+        <div class="price-feature">FAQ interativo com accordion</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Métricas básicas de clique</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta primary">Ver o Profissional completo</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">
+    O Studio Web fica em Niterói/RJ e atende fotógrafos de Niterói, São Gonçalo, Maricá e Rio de Janeiro. Os dois pacotes — Essencial por R$ 450 e Profissional por R$ 750 — são pagamento único, parcelável em 2x no Pix, com domínio .com.br e hospedagem do primeiro ano inclusos, e a página fica pronta em 3 a 5 dias úteis.
+    <br><br>
+    <strong>Pra fotógrafo, o Profissional costuma valer mais</strong> — é o pacote que tem galeria com scroll horizontal. Depois do primeiro ano, só a renovação do domínio (~R$ 40/ano direto no Registro.br).
+  </p>
+</section>
+
+<!-- PROVA SOCIAL: sem depoimento, case ou número de clientes até existir
+     trabalho publicado e autorizado. Quando houver, a seção entra aqui. -->
+
+<!-- FAQ -->
+<section class="faq section-padding" id="faq" aria-labelledby="faq-titulo">
+  <div style="text-align: center;" class="reveal">
+    <div class="section-tag" style="justify-content: center;">Perguntas frequentes</div>
+    <h2 class="section-title" id="faq-titulo" style="margin: 0 auto;">Dúvidas de quem <em>fotografa</em>.</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-fot-1" type="button" aria-expanded="false" aria-controls="faq-a-fot-1">
+        Galeria com foto grande não deixa a página lenta?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-fot-1" role="region" aria-labelledby="faq-q-fot-1">
+        <div class="faq-a-inner">Deixa, se as imagens forem publicadas cruas. Por isso cada foto é redimensionada e comprimida antes de entrar na página, e as que estão fora da primeira tela só carregam quando você rola até elas. A imagem continua nítida no celular e no desktop, sem o peso do arquivo original.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-fot-2" type="button" aria-expanded="false" aria-controls="faq-a-fot-2">
+        Quantas fotos cabem na galeria?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-fot-2" role="region" aria-labelledby="faq-q-fot-2">
+        <div class="faq-a-inner">De 12 a 20 é a faixa que funciona melhor: dá pra mostrar variedade sem cansar quem está olhando. Se você trabalha com tipos de ensaio bem diferentes, a gente separa em blocos — gestante, casamento, corporativo — em vez de misturar tudo numa fileira só.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-fot-3" type="button" aria-expanded="false" aria-controls="faq-a-fot-3">
+        Preciso colocar o preço dos pacotes na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-fot-3" role="region" aria-labelledby="faq-q-fot-3">
+        <div class="faq-a-inner">Não é obrigatório. Muito fotógrafo prefere "a partir de" ou "sob consulta", principalmente em casamento, onde o orçamento varia com data e horas de cobertura. O que importa é descrever o que está incluso em cada pacote — duração, número de fotos tratadas, deslocamento. Com contexto, o valor deixa de ser um número solto.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-fot-4" type="button" aria-expanded="false" aria-controls="faq-a-fot-4">
+        Dá pra explicar direitos de imagem na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-fot-4" role="region" aria-labelledby="faq-q-fot-4">
+        <div class="faq-a-inner">Dá, e adianta muita conversa. A gente monta uma seção curta com o que você já pratica: onde o cliente pode usar as fotos, se o uso comercial é separado e se você pode publicar o material no seu portfólio. O texto sai do que você me passar — eu não sou advogado e não redijo contrato, então o documento formal continua sendo com o seu.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-fot-5" type="button" aria-expanded="false" aria-controls="faq-a-fot-5">
+        Consigo trocar as fotos da galeria depois?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-fot-5" role="region" aria-labelledby="faq-q-fot-5">
+        <div class="faq-a-inner">Sim, por manutenção avulsa: R$ 80 para até 2 alterações simples ou R$ 150 para até 5 alterações ou 1 seção nova — trocar um lote de fotos entra aí. Sem contrato e sem mensalidade. Se você atualiza portfólio com muita frequência, me fala no briefing que a gente pensa a galeria pra facilitar a troca.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" aria-labelledby="cta-titulo">
+  <div class="cta-bg-text">foco</div>
+  <div class="cta-final-content">
+    <div class="cta-final-tag reveal">→ Próximos passos</div>
+    <h2 class="cta-final-title reveal" id="cta-titulo">
+      Bora dar às suas fotos<br>
+      <em>o tamanho que elas pedem?</em>
+    </h2>
+    <p class="cta-final-sub reveal">Manda uma mensagem no WhatsApp contando que tipo de ensaio você faz. A primeira conversa é sem compromisso e já dá pra saber qual pacote faz sentido.</p>
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20fotógrafo%20e%20quero%20conversar%20sobre%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
+      Conversar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+        <span>Studio<em>Web</em></span>
+      </div>
+      <p class="footer-tagline">Landing pages que convertem visitantes em clientes. Pra autônomos e pequenos negócios que merecem destaque online.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="/">Home</a>
+      <a href="/#processo">Processo</a>
+      <a href="/#precos">Preços</a>
+      <a href="/#portfolio">Portfólio</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="/criacao-de-site-em-niteroi/">Criação de site em Niterói</a>
+      <a href="/quanto-custa-uma-landing-page/">Quanto custa uma landing page</a>
+      <a href="/landing-page-para-manicure/">Para manicure</a>
+      <a href="/landing-page-para-maquiadora/">Para maquiadora</a>
+      <span aria-current="page">Para fotógrafo</span>
+      <a href="/landing-page-para-personal-trainer/">Para personal trainer</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5521991088053" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/studiowebnit/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:studiowebniteroi@gmail.com">E-mail</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© <span id="ano">2026</span> Studio Web · Niterói/RJ — Todos os direitos reservados</div>
+    <div>Feito com <span style="color: var(--orange)">♥</span> e muita atenção aos detalhes</div>
+  </div>
+</footer>
+
+<!-- Dados estruturados. O negócio não é redeclarado aqui: os nós apontam para
+     o @id ".../#business" definido no index.html. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/#webpage",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/",
+      "name": "Landing page para fotógrafo em Niterói",
+      "description": "Site de portfólio para fotógrafo: galeria em alta qualidade que carrega rápido, pacotes de ensaio, prazo de entrega e contato no WhatsApp. A partir de R$ 450.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.studiowebniteroi.com.br/#website"
+      },
+      "publisher": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "about": {
+        "@id": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/#service"
+      },
+      "primaryImageOfPage": "https://www.studiowebniteroi.com.br/logo.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/#service",
+      "name": "Criação de landing page para fotógrafo",
+      "serviceType": "Criação de site de portfólio para fotógrafo",
+      "description": "Landing page de página única para fotógrafos, com galeria de fotos otimizada para carregamento rápido, descrição dos pacotes de ensaio, prazo de entrega das fotos, seção sobre direitos de imagem e botões de orçamento pelo WhatsApp. Pagamento único, sem mensalidade, entrega em 3 a 5 dias úteis.",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/",
+      "provider": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Niterói" },
+        { "@type": "City", "name": "São Gonçalo" },
+        { "@type": "City", "name": "Maricá" },
+        { "@type": "City", "name": "Rio de Janeiro" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "price": "450",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 4 seções com seleção de fotos, integração com WhatsApp em todos os botões, design mobile-first, domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        },
+        {
+          "@type": "Offer",
+          "name": "Profissional",
+          "price": "750",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 7 seções, incluindo galeria completa com scroll horizontal, FAQ interativo e métricas básicas de clique. Domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Studio Web",
+          "item": "https://www.studiowebniteroi.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Landing page para fotógrafo",
+          "item": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-fotografo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Galeria com foto grande não deixa a página lenta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deixa, se as imagens forem publicadas cruas. Por isso cada foto é redimensionada e comprimida antes de entrar na página, e as que estão fora da primeira tela só carregam quando você rola até elas. A imagem continua nítida no celular e no desktop, sem o peso do arquivo original."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quantas fotos cabem na galeria?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De 12 a 20 é a faixa que funciona melhor: dá pra mostrar variedade sem cansar quem está olhando. Se você trabalha com tipos de ensaio bem diferentes, a gente separa em blocos — gestante, casamento, corporativo — em vez de misturar tudo numa fileira só."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso colocar o preço dos pacotes na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não é obrigatório. Muito fotógrafo prefere \"a partir de\" ou \"sob consulta\", principalmente em casamento, onde o orçamento varia com data e horas de cobertura. O que importa é descrever o que está incluso em cada pacote — duração, número de fotos tratadas, deslocamento. Com contexto, o valor deixa de ser um número solto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá pra explicar direitos de imagem na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá, e adianta muita conversa. A gente monta uma seção curta com o que você já pratica: onde o cliente pode usar as fotos, se o uso comercial é separado e se você pode publicar o material no seu portfólio. O texto sai do que você me passar — eu não sou advogado e não redijo contrato, então o documento formal continua sendo com o seu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Consigo trocar as fotos da galeria depois?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, por manutenção avulsa: R$ 80 para até 2 alterações simples ou R$ 150 para até 5 alterações ou 1 seção nova — trocar um lote de fotos entra aí. Sem contrato e sem mensalidade. Se você atualiza portfólio com muita frequência, me fala no briefing que a gente pensa a galeria pra facilitar a troca."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/script.js"></script>
+</body>
+</html>

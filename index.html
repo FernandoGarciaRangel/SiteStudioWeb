@@ -3,43 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio Web — Landing Pages que convertem clientes em vendas</title>
-<meta name="description" content="Landing pages profissionais para autônomos e pequenos negócios. Pagamento único, sem mensalidade. A partir de R$ 450.">
+
+<!-- Marca que o JS está vivo. As animações de entrada (.reveal, .hero-title .word)
+     e o cursor customizado só se aplicam sob html.js, então sem JS a página
+     renderiza inteira e visível em vez de ficar em branco. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Criação de Landing Page em Niterói — Studio Web</title>
+<meta name="description" content="Landing pages para autônomos e pequenos negócios em Niterói/RJ. No ar em 3 a 5 dias, a partir de R$ 450. Pagamento único, sem mensalidade, domínio .com.br incluso.">
+
+<link rel="canonical" href="https://www.studiowebniteroi.com.br/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Web">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Niterói">
 
 <!-- Open Graph -->
+<!-- og:image ainda aponta pro logo (quadrado). Trocar por /og-image.jpg 1200x630 quando existir. -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://studioweb.com.br/">
+<meta property="og:url" content="https://www.studiowebniteroi.com.br/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Web">
 <meta property="og:title" content="Studio Web — Landing Pages que convertem">
-<meta property="og:description" content="Landing pages profissionais para autônomos e pequenos negócios. Pagamento único, sem mensalidade. A partir de R$ 450.">
-<meta property="og:image" content="https://studioweb.com.br/logo.png">
+<meta property="og:description" content="Landing pages para autônomos e pequenos negócios em Niterói/RJ. No ar em 3 a 5 dias, a partir de R$ 450. Pagamento único, sem mensalidade.">
+<meta property="og:image" content="https://www.studiowebniteroi.com.br/logo.png">
+<meta property="og:image:width" content="1092">
+<meta property="og:image:height" content="1092">
+<meta property="og:image:alt" content="Studio Web — landing pages para autônomos em Niterói">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Studio Web — Landing Pages que convertem">
-<meta name="twitter:description" content="Landing pages profissionais para autônomos e pequenos negócios. A partir de R$ 450.">
-<meta name="twitter:image" content="https://studioweb.com.br/logo.png">
+<meta name="twitter:description" content="Landing pages para autônomos e pequenos negócios em Niterói/RJ. No ar em 3 a 5 dias, a partir de R$ 450.">
+<meta name="twitter:image" content="https://www.studiowebniteroi.com.br/logo.png">
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="cursor"></div>
-<div class="cursor-dot"></div>
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
 
 <!-- WhatsApp FAB -->
-<a href="https://wa.me/WHATSAPP_NUMBER?text=Olá!%20Vi%20o%20site%20do%20Studio%20Web%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+<a href="https://wa.me/5521991088053?text=Olá!%20Vi%20o%20site%20do%20Studio%20Web%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <!-- NAV -->
-<nav id="nav">
+<header>
+<nav id="nav" aria-label="Navegação principal">
   <a href="#" class="nav-logo">
-    <img src="logo.png" alt="Studio Web">
+    <img src="logo.png" alt="Studio Web" width="32" height="32" decoding="async">
     <span>Studio</span><span>Web</span>
   </a>
   <div class="nav-links">
@@ -55,16 +79,19 @@
     <span></span>
   </button>
 </nav>
+</header>
+
+<main id="conteudo">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" aria-labelledby="hero-titulo">
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-glow-2"></div>
 
   <div class="hero-tag">Studio Web · Niterói/RJ</div>
 
-  <h1 class="hero-title">
+  <h1 class="hero-title" id="hero-titulo">
     <span class="word" style="animation-delay: 0.4s">Sua</span>
     <span class="word" style="animation-delay: 0.5s"><em>página</em></span>
     <span class="word" style="animation-delay: 0.6s">vendendo</span><br>
@@ -117,43 +144,43 @@
     <div class="marquee-item">Personal Trainers<span class="star">✦</span></div>
     <div class="marquee-item">Designers<span class="star">✦</span></div>
     <div class="marquee-item">Confeitarias<span class="star">✦</span></div>
-    <div class="marquee-item">Manicures<span class="star">✦</span></div>
-    <div class="marquee-item">Maquiadoras<span class="star">✦</span></div>
-    <div class="marquee-item">Salões de Beleza<span class="star">✦</span></div>
-    <div class="marquee-item">Fotógrafos<span class="star">✦</span></div>
-    <div class="marquee-item">Personal Trainers<span class="star">✦</span></div>
-    <div class="marquee-item">Designers<span class="star">✦</span></div>
-    <div class="marquee-item">Confeitarias<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Manicures<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Maquiadoras<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Salões de Beleza<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Fotógrafos<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Personal Trainers<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Designers<span class="star">✦</span></div>
+    <div class="marquee-item" aria-hidden="true">Confeitarias<span class="star">✦</span></div>
   </div>
 </div>
 
 <!-- PROBLEM/SOLUTION -->
-<section class="problem section-padding">
+<section class="problem section-padding" aria-labelledby="problema-titulo">
   <div class="problem-grid">
     <div>
       <div class="section-tag reveal">O problema</div>
-      <h2 class="section-title reveal">Seu Instagram <em>está cheio</em>, mas o agendamento é uma bagunça?</h2>
+      <h2 class="section-title reveal" id="problema-titulo">Seu Instagram <em>está cheio</em>, mas o agendamento é uma bagunça?</h2>
       <p class="section-sub reveal">A maior parte dos clientes nunca chega ao final do funil porque trava em algum desses pontos:</p>
 
       <div class="problem-list reveal">
         <div class="problem-item">
           <div class="problem-icon">01</div>
           <div class="problem-text">
-            <strong>O cliente desiste no caminho</strong>
+            <h3 class="problem-title">O cliente desiste no caminho</h3>
             <p>Vê seu trabalho no feed, abre stories, depois fecha — sem nunca abrir uma conversa direta.</p>
           </div>
         </div>
         <div class="problem-item">
           <div class="problem-icon">02</div>
           <div class="problem-text">
-            <strong>Você responde a mesma coisa o dia inteiro</strong>
+            <h3 class="problem-title">Você responde a mesma coisa o dia inteiro</h3>
             <p>"Quanto custa?", "Onde você atende?", "Tem horário sábado?". Toda hora, no DM.</p>
           </div>
         </div>
         <div class="problem-item">
           <div class="problem-icon">03</div>
           <div class="problem-text">
-            <strong>Falta credibilidade pra cobrar mais</strong>
+            <h3 class="problem-title">Falta credibilidade pra cobrar mais</h3>
             <p>Sem uma página própria, você concorre só pelo preço com quem não tem nada a mostrar.</p>
           </div>
         </div>
@@ -176,10 +203,10 @@
 </section>
 
 <!-- PROCESSO -->
-<section class="processo section-padding" id="processo">
+<section class="processo section-padding" id="processo" aria-labelledby="processo-titulo">
   <div class="reveal">
     <div class="section-tag">Como funciona</div>
-    <h2 class="section-title">Do <em>brief</em> ao ar em 5 dias.</h2>
+    <h2 class="section-title" id="processo-titulo">Do <em>brief</em> ao ar em 5 dias.</h2>
     <p class="section-sub">Um processo enxuto e sem enrolação. Você fala, eu construo, você aprova.</p>
   </div>
 
@@ -212,10 +239,10 @@
 </section>
 
 <!-- PRICING -->
-<section class="pricing section-padding" id="precos">
+<section class="pricing section-padding" id="precos" aria-labelledby="precos-titulo">
   <div class="pricing-header reveal">
     <div class="section-tag" style="justify-content: center;">Investimento</div>
-    <h2 class="section-title" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
+    <h2 class="section-title" id="precos-titulo" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
   </div>
   <p class="section-sub pricing-sub-center reveal">Sem mensalidade, sem vínculo. O domínio .com.br já vem incluso no pacote.</p>
 
@@ -239,7 +266,7 @@
         <div class="price-feature">2 rodadas de ajustes</div>
       </div>
 
-      <a href="https://wa.me/WHATSAPP_NUMBER?text=Olá!%20Quero%20o%20Pacote%20Essencial!" target="_blank" rel="noopener" class="price-cta outline">Começar com Essencial</a>
+      <a href="https://wa.me/5521991088053?text=Olá!%20Quero%20o%20Pacote%20Essencial!" target="_blank" rel="noopener" class="price-cta outline">Começar com Essencial</a>
     </div>
 
     <div class="price-card featured reveal">
@@ -262,20 +289,22 @@
         <div class="price-feature">2 rodadas de ajustes</div>
       </div>
 
-      <a href="https://wa.me/WHATSAPP_NUMBER?text=Olá!%20Quero%20o%20Pacote%20Profissional!" target="_blank" rel="noopener" class="price-cta primary">Quero o Profissional</a>
+      <a href="https://wa.me/5521991088053?text=Olá!%20Quero%20o%20Pacote%20Profissional!" target="_blank" rel="noopener" class="price-cta primary">Quero o Profissional</a>
     </div>
   </div>
 
   <p class="pricing-note reveal">
+    O Studio Web fica em Niterói/RJ e atende autônomos e pequenos negócios de Niterói, São Gonçalo e Rio de Janeiro. Os dois pacotes — Essencial por R$ 450 e Profissional por R$ 750 — são pagamento único, parcelável em 2x no Pix, com domínio .com.br e hospedagem do primeiro ano inclusos, e a página fica pronta em 3 a 5 dias úteis.
+    <br><br>
     <strong>Quer 2 anos de domínio?</strong> Adicione R$ 40 em qualquer pacote. Manutenção avulsa a partir de R$ 80.
   </p>
 </section>
 
 <!-- PORTFOLIO -->
-<section class="portfolio section-padding" id="portfolio">
+<section class="portfolio section-padding" id="portfolio" aria-labelledby="portfolio-titulo">
   <div class="reveal">
     <div class="section-tag">Trabalhos recentes</div>
-    <h2 class="section-title">Cada projeto tem <em>sua própria voz</em>.</h2>
+    <h2 class="section-title" id="portfolio-titulo">Cada projeto tem <em>sua própria voz</em>.</h2>
     <p class="section-sub">Nada de templates. Cada landing é desenhada do zero pra refletir a personalidade do negócio.</p>
   </div>
 
@@ -284,105 +313,157 @@
       <div class="coming-soon-content">
         <p class="coming-soon-title">Projetos em desenvolvimento</p>
         <p class="coming-soon-sub">Em breve, cases reais de clientes. Enquanto isso, fale comigo e veja o processo na prática.</p>
-        <a href="https://wa.me/WHATSAPP_NUMBER" target="_blank" rel="noopener noreferrer" class="btn-primary">Falar no WhatsApp</a>
+        <a href="https://wa.me/5521991088053" target="_blank" rel="noopener noreferrer" class="btn-primary">Falar no WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="faq section-padding" id="faq">
+<section class="faq section-padding" id="faq" aria-labelledby="faq-titulo">
   <div style="text-align: center;" class="reveal">
     <div class="section-tag" style="justify-content: center;">Perguntas frequentes</div>
-    <h2 class="section-title" style="margin: 0 auto;">Tudo o que você <em>precisa saber</em>.</h2>
+    <h2 class="section-title" id="faq-titulo" style="margin: 0 auto;">Tudo o que você <em>precisa saber</em>.</h2>
   </div>
 
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" id="faq-q-1" type="button" aria-expanded="false" aria-controls="faq-a-1">
         Por que landing page e não site completo?
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
         <div class="faq-a-inner">Pequenos negócios não precisam de um site com 10 páginas. Precisam de uma página única, focada em um objetivo: transformar visitante em cliente. Landing pages convertem 3 a 5x mais que sites institucionais tradicionais.</div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q">
-        Qual a diferença entre o Essencial e o Profissional?
-        <span class="faq-icon">+</span>
+      <button class="faq-q" id="faq-q-2" type="button" aria-expanded="false" aria-controls="faq-a-2">
+        Qual a diferença entre landing page, site e linktree?
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+        <div class="faq-a-inner">Linktree é uma lista de links: não vende, só redireciona. Site institucional tem várias páginas e serve pra empresa que precisa de estrutura. Landing page é uma página só, desenhada pra um objetivo — no seu caso, virar agendamento no WhatsApp. Pra autônomo e pequeno negócio, a landing page é quase sempre a melhor relação entre custo e resultado.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-3" type="button" aria-expanded="false" aria-controls="faq-a-3">
+        Vale a pena ter site se eu já tenho Instagram?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+        <div class="faq-a-inner">Vale, e os dois trabalham juntos. O Instagram é onde te descobrem; a landing page é onde decidem. No feed o cliente não acha preço, horário nem endereço sem rolar 40 posts — na página ele acha tudo em 10 segundos e clica no WhatsApp com a mensagem pronta. Fora que o perfil é da Meta e pode cair a qualquer momento: a página e o domínio são seus.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-4" type="button" aria-expanded="false" aria-controls="faq-a-4">
+        Quanto custa fazer uma landing page em 2026?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
+        <div class="faq-a-inner">Aqui são R$ 450 no pacote Essencial e R$ 750 no Profissional, em pagamento único parcelável em 2x no Pix. No mercado a faixa é bem ampla: agência costuma cobrar de R$ 2.000 pra cima e ainda embutir mensalidade de manutenção, e construtor tipo Wix sai barato no primeiro mês mas vira assinatura pra sempre. A diferença aqui é que você paga uma vez e o domínio fica no seu nome.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-5" type="button" aria-expanded="false" aria-controls="faq-a-5">
+        Qual a diferença entre o Essencial e o Profissional?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5">
         <div class="faq-a-inner">O Essencial é mais direto: 4 seções focadas em conversão rápida. O Profissional adiciona galeria de trabalhos, seção sobre você, FAQ e métricas — ideal pra quem já tem portfólio para mostrar e quer construir mais autoridade.</div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" id="faq-q-6" type="button" aria-expanded="false" aria-controls="faq-a-6">
         Tem mensalidade ou taxa escondida?
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-6" role="region" aria-labelledby="faq-q-6">
         <div class="faq-a-inner">Não. Você paga uma única vez (parcelado em 2x via Pix). Domínio e hospedagem do primeiro ano já estão inclusos. Depois, só renovação anual do domínio (~R$40/ano direto no Registro.br) e manutenções avulsas só quando precisar.</div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" id="faq-q-7" type="button" aria-expanded="false" aria-controls="faq-a-7">
         E se eu quiser alterar algo depois?
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-7" role="region" aria-labelledby="faq-q-7">
         <div class="faq-a-inner">Manutenções são avulsas: R$80 (até 2 alterações simples) ou R$150 (até 5 alterações ou 1 nova seção). Sem contrato, sem mensalidade. Você compra só quando precisar.</div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" id="faq-q-8" type="button" aria-expanded="false" aria-controls="faq-a-8">
         Quanto tempo até a página estar no ar?
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-8" role="region" aria-labelledby="faq-q-8">
         <div class="faq-a-inner">3 a 5 dias úteis após o pagamento do sinal e o envio de todos os materiais (fotos, textos, logo). Depende muito da agilidade no envio do briefing — quanto mais rápido você manda, mais rápido fica pronto.</div>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-q">
+      <button class="faq-q" id="faq-q-9" type="button" aria-expanded="false" aria-controls="faq-a-9">
         O domínio fica em meu nome mesmo?
-        <span class="faq-icon">+</span>
+        <span class="faq-icon" aria-hidden="true">+</span>
       </button>
-      <div class="faq-a">
+      <div class="faq-a" id="faq-a-9" role="region" aria-labelledby="faq-q-9">
         <div class="faq-a-inner">Sim, sempre. O .com.br é registrado no Registro.br no seu CPF/CNPJ. Eu só faço a configuração técnica. Se um dia quiser sair, leva tudo com você sem dor de cabeça.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-10" type="button" aria-expanded="false" aria-controls="faq-a-10">
+        Preciso de CNPJ para registrar um domínio .com.br?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-10" role="region" aria-labelledby="faq-q-10">
+        <div class="faq-a-inner">Não. O Registro.br aceita CPF, e é assim que a maior parte dos meus clientes registra. Basta ser maior de 18 anos e ter CPF ativo. Se você tiver CNPJ e preferir usar, também dá — o domínio fica no titular que você escolher.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-11" type="button" aria-expanded="false" aria-controls="faq-a-11">
+        Vocês atendem fora de Niterói?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-11" role="region" aria-labelledby="faq-q-11">
+        <div class="faq-a-inner">Atendo. A base é Niterói, mas o processo é todo remoto: briefing por formulário, acompanhamento por WhatsApp e prévias por link — já funciona assim até com cliente daqui do lado. São Gonçalo, Maricá e Rio de Janeiro são rotina, e fora do estado também rola sem problema.</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA FINAL -->
-<section class="cta-final">
+<section class="cta-final" aria-labelledby="cta-titulo">
   <div class="cta-bg-text">vamos?</div>
   <div class="cta-final-content">
     <div class="cta-final-tag reveal">→ Próximos passos</div>
-    <h2 class="cta-final-title reveal">
+    <h2 class="cta-final-title reveal" id="cta-titulo">
       Bora colocar seu trabalho<br>
       <em>no lugar que ele merece?</em>
     </h2>
     <p class="cta-final-sub reveal">Manda uma mensagem no WhatsApp. A primeira conversa é sem compromisso e a gente já alinha o que faz mais sentido pro seu negócio.</p>
-    <a href="https://wa.me/WHATSAPP_NUMBER?text=Olá!%20Vi%20o%20site%20do%20Studio%20Web%20e%20quero%20conversar" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
+    <a href="https://wa.me/5521991088053?text=Olá!%20Vi%20o%20site%20do%20Studio%20Web%20e%20quero%20conversar" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
       Conversar no WhatsApp
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
     </a>
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div>
       <div class="footer-brand">
-        <img src="logo.png" alt="Studio Web">
+        <img src="logo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
         <span>Studio<em>Web</em></span>
       </div>
       <p class="footer-tagline">Landing pages que convertem visitantes em clientes. Pra autônomos e pequenos negócios que merecem destaque online.</p>
@@ -397,18 +478,248 @@
     </div>
 
     <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="/criacao-de-site-em-niteroi/">Criação de site em Niterói</a>
+      <a href="/quanto-custa-uma-landing-page/">Quanto custa uma landing page</a>
+      <a href="/landing-page-para-manicure/">Para manicure</a>
+      <a href="/landing-page-para-maquiadora/">Para maquiadora</a>
+      <a href="/landing-page-para-fotografo/">Para fotógrafo</a>
+      <a href="/landing-page-para-personal-trainer/">Para personal trainer</a>
+    </div>
+
+    <div class="footer-col">
       <h4>Contato</h4>
-      <a href="https://wa.me/WHATSAPP_NUMBER" target="_blank">WhatsApp</a>
-      <a href="https://www.instagram.com/studiowebnit/" target="_blank">Instagram</a>
+      <a href="https://wa.me/5521991088053" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/studiowebnit/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:studiowebniteroi@gmail.com">E-mail</a>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <div>© 2026 Studio Web · Niterói/RJ — Todos os direitos reservados</div>
-    <div>Feito com <span style="color: var(--orange)">♥</span> e <a href="#">muita atenção aos detalhes</a></div>
+    <div>© <span id="ano">2026</span> Studio Web · Niterói/RJ — Todos os direitos reservados</div>
+    <div>Feito com <span style="color: var(--orange)">♥</span> e muita atenção aos detalhes</div>
   </div>
 </footer>
+
+<!-- Dados estruturados. As URLs aqui precisam bater com o canonical e o og:url
+     do <head>; o texto das perguntas precisa bater com a seção #faq. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.studiowebniteroi.com.br/#business",
+      "name": "Studio Web",
+      "description": "Criação de landing pages para autônomos e pequenos negócios em Niterói e região metropolitana do Rio de Janeiro. Pagamento único, sem mensalidade.",
+      "url": "https://www.studiowebniteroi.com.br/",
+      "image": "https://www.studiowebniteroi.com.br/logo.png",
+      "logo": "https://www.studiowebniteroi.com.br/logo.png",
+      "telephone": "+5521991088053",
+      "email": "studiowebniteroi@gmail.com",
+      "priceRange": "R$450-R$750",
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "Pix",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Niterói",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Niterói"
+        },
+        {
+          "@type": "City",
+          "name": "São Gonçalo"
+        },
+        {
+          "@type": "City",
+          "name": "Rio de Janeiro"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/studiowebnit/"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pacotes de landing page",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Essencial",
+            "price": "450",
+            "priceCurrency": "BRL",
+            "description": "Landing page de até 4 seções, integração com WhatsApp em todos os botões, design 100% mobile-first, domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Criação de landing page — Essencial",
+              "serviceType": "Desenvolvimento web"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Profissional",
+            "price": "750",
+            "priceCurrency": "BRL",
+            "description": "Landing page de até 7 seções, incluindo galeria de trabalhos com scroll horizontal, seção sobre, FAQ interativo e métricas básicas de clique. Domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+            "availability": "https://schema.org/InStock",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Criação de landing page — Profissional",
+              "serviceType": "Desenvolvimento web"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.studiowebniteroi.com.br/#website",
+      "url": "https://www.studiowebniteroi.com.br/",
+      "name": "Studio Web",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      }
+    },
+    {
+      "@type": "HowTo",
+      "@id": "https://www.studiowebniteroi.com.br/#processo",
+      "name": "Como contratar uma landing page no Studio Web",
+      "totalTime": "P5D",
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": "BRL",
+        "value": "450"
+      },
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Conversa inicial",
+          "text": "Bate-papo no WhatsApp pra entender seu negócio, seu público, e o pacote ideal."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "Briefing + Sinal",
+          "text": "Você responde um formulário rápido com fotos, textos e cores. Pagamento dos 50% iniciais."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Desenvolvimento",
+          "text": "Eu construo a página com base no briefing. Você acompanha por links de prévia. Leva de 3 a 5 dias."
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Entrega + Ajustes",
+          "text": "Aprovação final, até 2 rodadas de ajustes inclusas, publicação no domínio. Pronto pra vender."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.studiowebniteroi.com.br/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Por que landing page e não site completo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pequenos negócios não precisam de um site com 10 páginas. Precisam de uma página única, focada em um objetivo: transformar visitante em cliente. Landing pages convertem 3 a 5x mais que sites institucionais tradicionais."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre landing page, site e linktree?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Linktree é uma lista de links: não vende, só redireciona. Site institucional tem várias páginas e serve pra empresa que precisa de estrutura. Landing page é uma página só, desenhada pra um objetivo — no seu caso, virar agendamento no WhatsApp. Pra autônomo e pequeno negócio, a landing page é quase sempre a melhor relação entre custo e resultado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vale a pena ter site se eu já tenho Instagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vale, e os dois trabalham juntos. O Instagram é onde te descobrem; a landing page é onde decidem. No feed o cliente não acha preço, horário nem endereço sem rolar 40 posts — na página ele acha tudo em 10 segundos e clica no WhatsApp com a mensagem pronta. Fora que o perfil é da Meta e pode cair a qualquer momento: a página e o domínio são seus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa fazer uma landing page em 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aqui são R$ 450 no pacote Essencial e R$ 750 no Profissional, em pagamento único parcelável em 2x no Pix. No mercado a faixa é bem ampla: agência costuma cobrar de R$ 2.000 pra cima e ainda embutir mensalidade de manutenção, e construtor tipo Wix sai barato no primeiro mês mas vira assinatura pra sempre. A diferença aqui é que você paga uma vez e o domínio fica no seu nome."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre o Essencial e o Profissional?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O Essencial é mais direto: 4 seções focadas em conversão rápida. O Profissional adiciona galeria de trabalhos, seção sobre você, FAQ e métricas — ideal pra quem já tem portfólio para mostrar e quer construir mais autoridade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tem mensalidade ou taxa escondida?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. Você paga uma única vez (parcelado em 2x via Pix). Domínio e hospedagem do primeiro ano já estão inclusos. Depois, só renovação anual do domínio (~R$40/ano direto no Registro.br) e manutenções avulsas só quando precisar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E se eu quiser alterar algo depois?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manutenções são avulsas: R$80 (até 2 alterações simples) ou R$150 (até 5 alterações ou 1 nova seção). Sem contrato, sem mensalidade. Você compra só quando precisar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto tempo até a página estar no ar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "3 a 5 dias úteis após o pagamento do sinal e o envio de todos os materiais (fotos, textos, logo). Depende muito da agilidade no envio do briefing — quanto mais rápido você manda, mais rápido fica pronto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O domínio fica em meu nome mesmo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim, sempre. O .com.br é registrado no Registro.br no seu CPF/CNPJ. Eu só faço a configuração técnica. Se um dia quiser sair, leva tudo com você sem dor de cabeça."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso de CNPJ para registrar um domínio .com.br?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O Registro.br aceita CPF, e é assim que a maior parte dos meus clientes registra. Basta ser maior de 18 anos e ter CPF ativo. Se você tiver CNPJ e preferir usar, também dá — o domínio fica no titular que você escolher."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem fora de Niterói?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendo. A base é Niterói, mas o processo é todo remoto: briefing por formulário, acompanhamento por WhatsApp e prévias por link — já funciona assim até com cliente daqui do lado. São Gonçalo, Maricá e Rio de Janeiro são rotina, e fora do estado também rola sem problema."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
 <script src="script.js"></script>
 </body>

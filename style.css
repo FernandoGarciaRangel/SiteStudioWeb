@@ -24,16 +24,43 @@ body {
   color: var(--white);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  cursor: none;
 }
 
-a { color: inherit; text-decoration: none; cursor: none; }
-button { cursor: none; }
+a { color: inherit; text-decoration: none; }
 
-@media (hover: none) and (pointer: coarse) {
-  body, a, button { cursor: auto; }
-  .cursor, .cursor-dot { display: none !important; }
+/* O cursor customizado só existe quando o JS está vivo pra posicioná-lo e o
+   ponteiro é fino — a mesma condição que o script.js checa. Fora disso vale o
+   ponteiro nativo e as duas divs não aparecem (sem JS elas ficariam paradas
+   no canto superior esquerdo, e sem cursor:none o usuário ficaria sem
+   ponteiro nenhum). */
+.cursor, .cursor-dot { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  html.js body,
+  html.js a,
+  html.js button { cursor: none; }
+
+  html.js .cursor,
+  html.js .cursor-dot { display: block; }
 }
+
+/* ── SKIP LINK ── */
+.skip-link {
+  /* fixed, não absolute: com absolute ele fica preso ao topo do documento e
+     sai da tela se o usuário voltar nele por Shift+Tab já tendo rolado. */
+  position: fixed;
+  top: 0; left: 50%;
+  transform: translate(-50%, -120%);
+  z-index: 300;
+  background: var(--orange);
+  color: var(--black);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 0 0 10px 10px;
+  transition: transform 0.2s ease;
+}
+.skip-link:focus { transform: translate(-50%, 0); }
 
 /* ── CUSTOM CURSOR ── */
 .cursor {
@@ -63,7 +90,10 @@ button { cursor: none; }
 }
 
 /* ── NAV ── */
-nav {
+/* Escopado por id de propósito. Como seletor de elemento, isto pegava
+   QUALQUER <nav> da página (breadcrumb, menu de rodapé) e transformava em
+   barra fixa no topo. Páginas novas com mais de um <nav> dependem disso. */
+#nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
@@ -77,7 +107,7 @@ nav {
   border-bottom: 1px solid var(--line);
   transition: padding 0.3s;
 }
-nav.scrolled { padding: 14px 40px; }
+#nav.scrolled { padding: 14px 40px; }
 
 .nav-logo {
   display: flex;
@@ -152,8 +182,8 @@ nav.scrolled { padding: 14px 40px; }
 .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 800px) {
-  nav { padding: 16px 20px; }
-  nav.scrolled { padding: 12px 20px; }
+  #nav { padding: 16px 20px; }
+  #nav.scrolled { padding: 12px 20px; }
 
   .nav-burger { display: flex; }
 
@@ -265,8 +295,8 @@ nav.scrolled { padding: 14px 40px; }
   z-index: 2;
   max-width: 1100px;
 }
-.hero-title .word {
-  display: inline-block;
+.hero-title .word { display: inline-block; }
+html.js .hero-title .word {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -385,6 +415,147 @@ nav.scrolled { padding: 14px 40px; }
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-top: 6px;
+}
+
+/* ── PÁGINAS DE CONTEÚDO ── */
+/* Componentes das páginas internas (/landing-page-para-*/,
+   /criacao-de-site-em-niteroi/, /quanto-custa-uma-landing-page/). Ficam num
+   bloco próprio, e não junto de uma seção, porque são transversais a elas. */
+
+/* O hero da home ocupa 100vh porque é a primeira dobra de uma landing. Numa
+   página de conteúdo isso só empurra o texto pra fora da primeira tela. */
+.hero.hero-doc { min-height: auto; padding: 150px 40px 90px; }
+@media (max-width: 800px) { .hero.hero-doc { padding: 120px 20px 60px; } }
+
+/* Breadcrumb, espelhando o BreadcrumbList do JSON-LD de cada página. É um
+   <nav> de verdade: isso só funciona porque a barra do topo é #nav e não o
+   seletor de elemento `nav`, que transformava qualquer <nav> em barra fixa. */
+.crumbs {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--gray-500);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+.crumbs a { color: var(--gray-300); }
+.crumbs a:hover { color: var(--orange); }
+.crumbs span { margin: 0 8px; color: var(--gray-700); }
+
+/* Texto corrido. A .section-sub serve pra um parágrafo só (tem
+   margin-bottom de 60px); aqui são vários seguidos. */
+.prose { max-width: 760px; }
+.prose p { color: var(--gray-300); line-height: 1.75; margin-bottom: 20px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--white); font-weight: 600; }
+.prose a { color: var(--orange); text-decoration: underline; text-underline-offset: 3px; }
+
+.doc-section { border-bottom: 1px solid var(--line); }
+.doc-section.alt { background: var(--black-2); }
+
+/* Lista de bairros atendidos (/criacao-de-site-em-niteroi/). */
+.chip-list { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0 0 36px; padding: 0; }
+.chip {
+  border: 1px solid var(--line-strong);
+  background: var(--black-2);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  color: var(--gray-100);
+}
+
+/* Tabela comparativa (/quanto-custa-uma-landing-page/). O wrapper rola
+   sozinho no celular pra não empurrar o body inteiro na horizontal. */
+.compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 24px; }
+.compare {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  text-align: left;
+}
+/* A legenda existe pro leitor de tela: a tabela tem 4 colunas e sem ela o
+   contexto se perde. Fora da tela em vez de display:none — display:none
+   some da árvore de acessibilidade também. */
+.compare caption {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.compare th, .compare td {
+  padding: 20px 18px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.compare thead th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  font-weight: 500;
+  border-bottom: 1px solid var(--line-strong);
+}
+.compare tbody th {
+  font-weight: 600;
+  color: var(--white);
+  white-space: nowrap;
+}
+.compare td { color: var(--gray-300); }
+.compare .faixa { font-family: 'JetBrains Mono', monospace; color: var(--gray-100); white-space: nowrap; }
+.compare tr.destaque th, .compare tr.destaque td { background: rgba(255,107,26,0.06); }
+.compare tr.destaque th { color: var(--orange); }
+
+/* Abaixo de 600px a tabela vira uma pilha de cards: com 4 colunas em tela
+   estreita as duas colunas de texto empurram a linha pra ~250px de altura e
+   sobra um vazio enorme do lado visível. Os display:block matam os papéis
+   implícitos de tabela, por isso o HTML traz role="table|row|rowheader|cell"
+   explícito — e o rótulo de cada célula vem do data-label, já que o thead
+   some. */
+@media (max-width: 600px) {
+  .compare-wrap { overflow-x: visible; }
+  .compare { min-width: 0; display: block; font-size: 0.9rem; }
+  .compare thead { display: none; }
+  .compare tbody, .compare tr, .compare th, .compare td { display: block; width: 100%; }
+  .compare tbody tr {
+    border: 1px solid var(--line-strong);
+    border-radius: 16px;
+    background: var(--black);
+    padding: 0 18px 6px;
+    margin-bottom: 16px;
+  }
+  .compare tbody th {
+    padding: 18px 0 10px;
+    font-size: 1.1rem;
+    white-space: normal;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+  .compare tbody td { padding: 0 0 16px; border-bottom: none; }
+  .compare tbody td::before {
+    content: attr(data-label);
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.64rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+  .compare .faixa { white-space: normal; }
+  .compare tr.destaque { border-color: rgba(255,107,26,0.5); }
+  .compare tr.destaque th, .compare tr.destaque td { background: none; }
+}
+
+.nota-fonte {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  max-width: 760px;
 }
 
 /* ── MARQUEE ── */
@@ -522,7 +693,7 @@ section { position: relative; }
   flex-shrink: 0;
   margin-top: 2px;
 }
-.problem-text strong {
+.problem-title {
   font-size: 1.05rem;
   font-weight: 600;
   display: block;
@@ -812,9 +983,13 @@ section { position: relative; }
 
 .pricing-note {
   text-align: center;
-  margin-top: 48px;
+  /* max-width porque este parágrafo cresceu: sem ele a linha ia de ponta a
+     ponta da tela em monitor largo. */
+  max-width: 720px;
+  margin: 48px auto 0;
   color: var(--gray-500);
   font-size: 0.85rem;
+  line-height: 1.6;
   position: relative;
   z-index: 1;
 }
@@ -1167,9 +1342,14 @@ footer {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  /* 4 colunas desde que as páginas internas entraram no rodapé:
+     marca + Navegação + Páginas + Contato. */
+  grid-template-columns: 2fr 1fr 1.2fr 1fr;
   gap: 60px;
   margin-bottom: 60px;
+}
+@media (max-width: 1000px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
 }
 @media (max-width: 800px) {
   .footer-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1206,7 +1386,8 @@ footer {
   color: var(--orange);
   margin-bottom: 20px;
 }
-.footer-col a {
+.footer-col a,
+.footer-col span[aria-current] {
   display: block;
   color: var(--gray-300);
   font-size: 0.9rem;
@@ -1214,6 +1395,8 @@ footer {
   transition: color 0.2s;
 }
 .footer-col a:hover { color: var(--white); }
+/* A página em que o visitante já está não vira link. */
+.footer-col span[aria-current] { color: var(--gray-500); }
 
 .footer-bottom {
   padding-top: 32px;
@@ -1233,12 +1416,15 @@ footer {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.reveal {
+/* Visível por padrão: sem JS (crawlers de IA, scrapers de preview, falha de
+   script) a página inteira aparece. O estado escondido só existe sob html.js. */
+.reveal { opacity: 1; transform: none; }
+html.js .reveal {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── WHATSAPP FAB ── */
 .wa-fab {
@@ -1260,4 +1446,31 @@ footer {
 @keyframes pulse-wa {
   0%, 100% { box-shadow: 0 8px 32px rgba(37,211,102,0.4); }
   50% { box-shadow: 0 8px 48px rgba(37,211,102,0.7); }
+}
+
+/* ── MOVIMENTO REDUZIDO ── */
+/* Global, não é breakpoint de seção — por isso fica no fim do arquivo e não
+   logo abaixo das regras de uma seção específica. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* As animações acima terminam instantaneamente, mas quem nasce em opacity:0
+     precisa chegar ao estado final de qualquer forma. */
+  .hero-tag,
+  html.js .reveal,
+  html.js .hero-title .word {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* animateCursor() nao roda aqui, entao o anel ficaria parado na tela.
+     Some com o cursor customizado e devolve o ponteiro do sistema. */
+  .cursor, .cursor-dot { display: none !important; }
+  html.js body, html.js a, html.js button { cursor: auto !important; }
 }

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Marca que o JS está vivo. As animações de entrada (.reveal, .hero-title .word)
+     e o cursor customizado só se aplicam sob html.js, então sem JS a página
+     renderiza inteira e visível em vez de ficar em branco. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<title>Landing page para personal trainer em Niterói — Studio Web</title>
+<meta name="description" content="Página para personal trainer: agendamento de avaliação pelo WhatsApp, planos avulso e mensal, online ou presencial. No ar em 3 a 5 dias, a partir de R$ 450.">
+
+<link rel="canonical" href="https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Studio Web">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="BR-RJ">
+<meta name="geo.placename" content="Niterói">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Studio Web">
+<meta property="og:title" content="Landing page para personal trainer — Studio Web">
+<meta property="og:description" content="Agendamento de avaliação pelo WhatsApp, planos avulso e mensal, online ou presencial. A partir de R$ 450, pagamento único.">
+<meta property="og:image" content="https://www.studiowebniteroi.com.br/logo.png">
+<meta property="og:image:width" content="1092">
+<meta property="og:image:height" content="1092">
+<meta property="og:image:alt" content="Studio Web — landing pages para autônomos em Niterói">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Landing page para personal trainer — Studio Web">
+<meta name="twitter:description" content="Avaliação agendada, planos explicados e atendimento online ou presencial numa página só. A partir de R$ 450, sem mensalidade.">
+<meta name="twitter:image" content="https://www.studiowebniteroi.com.br/logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
+
+<div class="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" aria-hidden="true"></div>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/5521991088053?text=Olá!%20Sou%20personal%20trainer%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<header>
+<nav id="nav" aria-label="Navegação principal">
+  <a href="/" class="nav-logo">
+    <img src="/logo.png" alt="Studio Web" width="32" height="32" decoding="async">
+    <span>Studio</span><span>Web</span>
+  </a>
+  <div class="nav-links">
+    <a href="/#processo">Processo</a>
+    <a href="/#precos">Preços</a>
+    <a href="/#portfolio">Portfólio</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="/#precos" class="nav-cta">Quero a minha</a>
+  <button class="nav-burger" id="nav-burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+</header>
+
+<main id="conteudo">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-titulo">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <nav class="crumbs" aria-label="Trilha de navegação">
+    <a href="/">Studio Web</a><span aria-hidden="true">/</span>Landing page para personal trainer
+  </nav>
+
+  <div class="hero-tag">Para personal trainers · Niterói/RJ</div>
+
+  <h1 class="hero-title" id="hero-titulo">
+    <span class="word" style="animation-delay: 0.4s">Sua</span>
+    <span class="word" style="animation-delay: 0.5s"><em>avaliação</em></span>
+    <span class="word" style="animation-delay: 0.6s">agendada</span><br>
+    <span class="word" style="animation-delay: 0.7s">sem</span>
+    <span class="word" style="animation-delay: 0.8s">o</span>
+    <span class="word" style="animation-delay: 0.9s"><span class="accent">direct.</span></span>
+  </h1>
+
+  <p class="hero-sub">
+    Uma página que explica como você trabalha, quais planos existem e onde você atende — e leva quem se interessou direto pro WhatsApp pra marcar a primeira avaliação.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20personal%20trainer%20e%20quero%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary">
+      Falar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <a href="/#precos" class="btn-secondary">
+      Ver pacotes e preços
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">3-5</div>
+      <div class="stat-label">Dias para entrega</div>
+    </div>
+    <div>
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Mobile first</div>
+    </div>
+    <div>
+      <div class="stat-num">R$450</div>
+      <div class="stat-label">A partir de</div>
+    </div>
+    <div>
+      <div class="stat-num">0</div>
+      <div class="stat-label">Mensalidade</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR DO NICHO -->
+<section class="problem section-padding" id="dor" aria-labelledby="dor-titulo">
+  <div style="max-width: 850px;">
+    <div class="section-tag reveal">O problema de quem treina gente</div>
+    <h2 class="section-title reveal" id="dor-titulo">O aluno até quer <em>começar</em>. Só que trava antes.</h2>
+    <p class="section-sub reveal">Três coisas que fazem a conversa morrer entre o interesse e a primeira sessão:</p>
+
+    <div class="problem-list reveal">
+      <div class="problem-item">
+        <div class="problem-icon">01</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Ninguém sabe como começa</h3>
+          <p>Tem avaliação antes? Custa? Precisa de exame? Quem não sabe qual é o primeiro passo costuma adiar em vez de perguntar.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">02</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Avulso, mensal, online, presencial — tudo misturado</h3>
+          <p>Você tem formatos diferentes de atendimento e cada um com um preço, mas isso só existe na sua cabeça e no direct. O aluno não compara o que não vê.</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">03</div>
+        <div class="problem-text">
+          <h3 class="problem-title">Falta lugar pra mostrar quem você é</h3>
+          <p>Formação, CREF, onde você atende, como monta o treino. Sem isso escrito em algum lugar, você compete só por preço com quem não tem nada disso.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE A PÁGINA LEVA -->
+<section class="processo section-padding" id="inclui" aria-labelledby="inclui-titulo">
+  <div class="reveal">
+    <div class="section-tag">O que entra na sua página</div>
+    <h2 class="section-title" id="inclui-titulo">Autoridade sem <em>promessa</em> de resultado.</h2>
+    <p class="section-sub">A página mostra como você trabalha e o que o aluno pode esperar do processo — não um "antes e depois" que ninguém pode garantir.</p>
+  </div>
+
+  <div class="processo-grid reveal">
+    <div class="proc-step">
+      <div class="proc-num">01</div>
+      <h3 class="proc-title">Agendamento da avaliação</h3>
+      <p class="proc-desc">O primeiro passo explicado com todas as letras: o que acontece na avaliação, quanto tempo dura, se é cobrada. E o botão de WhatsApp logo ali pra marcar.</p>
+      <div class="proc-time">Primeiro passo claro</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">02</div>
+      <h3 class="proc-title">Planos avulso e mensal</h3>
+      <p class="proc-desc">Sessão avulsa, pacote de 8 ou 12, mensal com frequência definida — lado a lado, com o que cada um inclui. O aluno escolhe antes de te chamar.</p>
+      <div class="proc-time">Comparação fácil</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">03</div>
+      <h3 class="proc-title">Online, presencial ou os dois</h3>
+      <p class="proc-desc">Onde você atende presencialmente — academia, condomínio, praia, casa do aluno —, quais bairros cobre e como funciona o acompanhamento online.</p>
+      <div class="proc-time">Sem mal-entendido</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-num">04</div>
+      <h3 class="proc-title">Sua formação e método</h3>
+      <p class="proc-desc">CREF, formação, com que perfil de aluno você trabalha e como monta o treino. É o que constrói confiança sem prometer número na balança.</p>
+      <div class="proc-time">Credibilidade real</div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES (resumo) -->
+<section class="pricing section-padding" id="pacotes" aria-labelledby="pacotes-titulo">
+  <div class="pricing-header reveal">
+    <div class="section-tag" style="justify-content: center;">Investimento</div>
+    <h2 class="section-title" id="pacotes-titulo" style="margin: 0 auto 24px;">Pague <em>uma vez</em>. Use pra sempre.</h2>
+  </div>
+  <p class="section-sub pricing-sub-center reveal">Dois pacotes, pagamento único e parcelável em 2x no Pix. Domínio .com.br e hospedagem do primeiro ano inclusos.</p>
+
+  <div class="price-grid">
+    <div class="price-card reveal">
+      <div class="price-name">Essencial</div>
+      <div class="price-tagline">Pra quem quer só o caminho até a avaliação</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">450</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 225</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 4 seções, com os planos de treino</div>
+        <div class="price-feature">WhatsApp em todos os botões</div>
+        <div class="price-feature">Design 100% mobile-first</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta outline">Ver o Essencial completo</a>
+    </div>
+
+    <div class="price-card featured reveal">
+      <div class="price-name">Profissional</div>
+      <div class="price-tagline">Pra quem quer explicar método e formação</div>
+
+      <div class="price-amount">
+        <span class="price-currency">R$</span>
+        <span class="price-value">750</span>
+      </div>
+      <div class="price-pix">2x de <span>R$ 375</span> · Pix</div>
+
+      <div class="price-features">
+        <div class="price-feature">Até 7 seções, incluindo Sobre e método</div>
+        <div class="price-feature">Galeria com scroll horizontal</div>
+        <div class="price-feature">FAQ interativo com accordion</div>
+        <div class="price-feature">Domínio .com.br por 1 ano incluso</div>
+        <div class="price-feature">Métricas básicas de clique</div>
+        <div class="price-feature">Hospedagem inclusa</div>
+        <div class="price-feature">2 rodadas de ajustes</div>
+      </div>
+
+      <a href="/#precos" class="price-cta primary">Ver o Profissional completo</a>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal">
+    O Studio Web fica em Niterói/RJ e atende personal trainers de Niterói, São Gonçalo, Maricá e Rio de Janeiro. Os dois pacotes — Essencial por R$ 450 e Profissional por R$ 750 — são pagamento único, parcelável em 2x no Pix, com domínio .com.br e hospedagem do primeiro ano inclusos, e a página fica pronta em 3 a 5 dias úteis.
+    <br><br>
+    <strong>Depois do primeiro ano</strong>, só a renovação do domínio (~R$ 40/ano direto no Registro.br). Manutenção avulsa a partir de R$ 80.
+  </p>
+</section>
+
+<!-- PROVA SOCIAL: sem depoimento de aluno, case ou número de alunos atendidos
+     até existir trabalho publicado e autorizado. Quando houver, entra aqui. -->
+
+<!-- FAQ -->
+<section class="faq section-padding" id="faq" aria-labelledby="faq-titulo">
+  <div style="text-align: center;" class="reveal">
+    <div class="section-tag" style="justify-content: center;">Perguntas frequentes</div>
+    <h2 class="section-title" id="faq-titulo" style="margin: 0 auto;">Dúvidas de quem <em>treina gente</em>.</h2>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-pt-1" type="button" aria-expanded="false" aria-controls="faq-a-pt-1">
+        Posso mostrar "antes e depois" de aluno na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-pt-1" role="region" aria-labelledby="faq-q-pt-1">
+        <div class="faq-a-inner">Dá pra colocar, mas eu costumo puxar pra outro lado. Foto de transformação promete um resultado que depende de genética, alimentação, sono e histórico do aluno — e exige autorização de imagem por escrito. Funciona melhor mostrar o processo: como é a avaliação, como o treino é montado, como você acompanha. Isso é verdade sobre o seu trabalho, não sobre o corpo de outra pessoa.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-pt-2" type="button" aria-expanded="false" aria-controls="faq-a-pt-2">
+        Dá pra mostrar plano avulso e mensal na mesma página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-pt-2" role="region" aria-labelledby="faq-q-pt-2">
+        <div class="faq-a-inner">Dá, e é o que costuma resolver a dúvida mais comum. Os formatos ficam lado a lado — sessão avulsa, pacote fechado, mensal com frequência definida — cada um com o que inclui. Se você tem preço diferente pra online e presencial, os dois aparecem separados pra ninguém se confundir.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-pt-3" type="button" aria-expanded="false" aria-controls="faq-a-pt-3">
+        Atendo online e presencial. A página dá conta dos dois?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-pt-3" role="region" aria-labelledby="faq-q-pt-3">
+        <div class="faq-a-inner">Dá. A gente separa uma seção pra cada formato: no presencial entram os locais e bairros que você cobre; no online, como o treino é enviado, com que frequência você revisa e por onde é o contato. E o botão de WhatsApp de cada bloco já vai com a mensagem certa, então você sabe de onde veio o contato.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-pt-4" type="button" aria-expanded="false" aria-controls="faq-a-pt-4">
+        Preciso ter CREF pra aparecer na página?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-pt-4" role="region" aria-labelledby="faq-q-pt-4">
+        <div class="faq-a-inner">O registro no CREF é exigência da profissão, não minha — mas se você tem, vale colocar visível. É informação que separa você de quem só posta treino na internet, e o aluno que pesquisa antes de contratar procura por isso. O número entra na seção sobre, junto da sua formação.</div>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-q" id="faq-q-pt-5" type="button" aria-expanded="false" aria-controls="faq-a-pt-5">
+        A página agenda a avaliação sozinha, com calendário?
+        <span class="faq-icon" aria-hidden="true">+</span>
+      </button>
+      <div class="faq-a" id="faq-a-pt-5" role="region" aria-labelledby="faq-q-pt-5">
+        <div class="faq-a-inner">O agendamento acontece no WhatsApp. A página explica como funciona a avaliação, mostra seus horários e leva o aluno pro seu número com a mensagem pronta. Sistema com calendário e reserva automática é outro tipo de projeto — se for isso que você precisa, me chama que a gente conversa sobre o formato.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" aria-labelledby="cta-titulo">
+  <div class="cta-bg-text">treino</div>
+  <div class="cta-final-content">
+    <div class="cta-final-tag reveal">→ Próximos passos</div>
+    <h2 class="cta-final-title reveal" id="cta-titulo">
+      Bora deixar claro<br>
+      <em>como começar com você?</em>
+    </h2>
+    <p class="cta-final-sub reveal">Manda uma mensagem no WhatsApp contando como você atende hoje. A primeira conversa é sem compromisso e já dá pra saber qual pacote faz sentido.</p>
+    <a href="https://wa.me/5521991088053?text=Olá!%20Sou%20personal%20trainer%20e%20quero%20conversar%20sobre%20uma%20landing%20page" target="_blank" rel="noopener" class="btn-primary reveal" style="font-size: 1.05rem;">
+      Conversar no WhatsApp
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="/logo.png" alt="" width="40" height="40" loading="lazy" decoding="async">
+        <span>Studio<em>Web</em></span>
+      </div>
+      <p class="footer-tagline">Landing pages que convertem visitantes em clientes. Pra autônomos e pequenos negócios que merecem destaque online.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Navegação</h4>
+      <a href="/">Home</a>
+      <a href="/#processo">Processo</a>
+      <a href="/#precos">Preços</a>
+      <a href="/#portfolio">Portfólio</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Páginas</h4>
+      <a href="/criacao-de-site-em-niteroi/">Criação de site em Niterói</a>
+      <a href="/quanto-custa-uma-landing-page/">Quanto custa uma landing page</a>
+      <a href="/landing-page-para-manicure/">Para manicure</a>
+      <a href="/landing-page-para-maquiadora/">Para maquiadora</a>
+      <a href="/landing-page-para-fotografo/">Para fotógrafo</a>
+      <span aria-current="page">Para personal trainer</span>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="https://wa.me/5521991088053" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/studiowebnit/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:studiowebniteroi@gmail.com">E-mail</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© <span id="ano">2026</span> Studio Web · Niterói/RJ — Todos os direitos reservados</div>
+    <div>Feito com <span style="color: var(--orange)">♥</span> e muita atenção aos detalhes</div>
+  </div>
+</footer>
+
+<!-- Dados estruturados. O negócio não é redeclarado aqui: os nós apontam para
+     o @id ".../#business" definido no index.html. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/#webpage",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/",
+      "name": "Landing page para personal trainer em Niterói",
+      "description": "Página para personal trainer: agendamento de avaliação pelo WhatsApp, planos avulso e mensal, online ou presencial. No ar em 3 a 5 dias, a partir de R$ 450.",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://www.studiowebniteroi.com.br/#website"
+      },
+      "publisher": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "about": {
+        "@id": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/#service"
+      },
+      "primaryImageOfPage": "https://www.studiowebniteroi.com.br/logo.png"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/#service",
+      "name": "Criação de landing page para personal trainer",
+      "serviceType": "Criação de landing page para personal trainer",
+      "description": "Landing page de página única para personal trainers, com explicação da avaliação inicial, comparação entre planos avulso e mensal, seções separadas para atendimento online e presencial, espaço para formação e CREF, e botões de agendamento pelo WhatsApp. Pagamento único, sem mensalidade, entrega em 3 a 5 dias úteis.",
+      "url": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/",
+      "provider": {
+        "@id": "https://www.studiowebniteroi.com.br/#business"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Niterói" },
+        { "@type": "City", "name": "São Gonçalo" },
+        { "@type": "City", "name": "Maricá" },
+        { "@type": "City", "name": "Rio de Janeiro" }
+      ],
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Essencial",
+          "price": "450",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 4 seções com os planos de treino, integração com WhatsApp em todos os botões, design mobile-first, domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        },
+        {
+          "@type": "Offer",
+          "name": "Profissional",
+          "price": "750",
+          "priceCurrency": "BRL",
+          "description": "Landing page de até 7 seções, incluindo seção sobre com formação e método, galeria com scroll horizontal, FAQ interativo e métricas básicas de clique. Domínio .com.br por 1 ano, hospedagem inclusa e 2 rodadas de ajustes.",
+          "availability": "https://schema.org/InStock",
+          "url": "https://www.studiowebniteroi.com.br/#precos"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Studio Web",
+          "item": "https://www.studiowebniteroi.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Landing page para personal trainer",
+          "item": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.studiowebniteroi.com.br/landing-page-para-personal-trainer/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Posso mostrar \"antes e depois\" de aluno na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá pra colocar, mas eu costumo puxar pra outro lado. Foto de transformação promete um resultado que depende de genética, alimentação, sono e histórico do aluno — e exige autorização de imagem por escrito. Funciona melhor mostrar o processo: como é a avaliação, como o treino é montado, como você acompanha. Isso é verdade sobre o seu trabalho, não sobre o corpo de outra pessoa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dá pra mostrar plano avulso e mensal na mesma página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá, e é o que costuma resolver a dúvida mais comum. Os formatos ficam lado a lado — sessão avulsa, pacote fechado, mensal com frequência definida — cada um com o que inclui. Se você tem preço diferente pra online e presencial, os dois aparecem separados pra ninguém se confundir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Atendo online e presencial. A página dá conta dos dois?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dá. A gente separa uma seção pra cada formato: no presencial entram os locais e bairros que você cobre; no online, como o treino é enviado, com que frequência você revisa e por onde é o contato. E o botão de WhatsApp de cada bloco já vai com a mensagem certa, então você sabe de onde veio o contato."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso ter CREF pra aparecer na página?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O registro no CREF é exigência da profissão, não minha — mas se você tem, vale colocar visível. É informação que separa você de quem só posta treino na internet, e o aluno que pesquisa antes de contratar procura por isso. O número entra na seção sobre, junto da sua formação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "A página agenda a avaliação sozinha, com calendário?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O agendamento acontece no WhatsApp. A página explica como funciona a avaliação, mostra seus horários e leva o aluno pro seu número com a mensagem pronta. Sistema com calendário e reserva automática é outro tipo de projeto — se for isso que você precisa, me chama que a gente conversa sobre o formato."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<script src="/script.js"></script>
+</body>
+</html>
