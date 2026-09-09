@@ -11,16 +11,20 @@ Das 36 correções do diagnóstico, **27 estão aplicadas**, em 14 commits — t
 que era edição de arquivo no repositório. O site foi de **1 para 7 URLs
 indexáveis**.
 
-Os **9 itens restantes** dependem de um clique no painel da Vercel, de você criar
-alguma coisa (imagem, conta, caso real), ou de uma decisão editorial. Um deles, o
-`7.1`, já está pronto no código e só espera você escolher o provedor de analytics.
+**O site está no ar desde 04/09/2026** (merge do PR #1). Os itens `0.2` (redirect
+308), `0.4` (crawlers de IA) e `6.4` (PageSpeed) foram fechados em 09/09.
+
+Restam **6 itens**, todos dependentes de material, conta ou decisão sua.
 
 | grupo | itens |
 |---|---|
-| Aplicados no repositório | 27 |
-| Painel da Vercel | 2 — `0.2`, `0.4` |
-| Precisam de material ou conta sua | 6 — `2.4`, `2.5`, `4.3`, `4.4`, `4.7`, `6.4` |
+| Aplicados | 30 |
+| Precisam de material ou conta sua | 5 — `2.4`, `2.5`, `4.3`, `4.4`, `4.7` |
 | Acompanhamento contínuo | 1 — `7.2` |
+
+**Medição de 09/09**, PageSpeed Insights no celular: Desempenho **93**,
+Acessibilidade **94→100** (as duas falhas apontadas foram corrigidas),
+Práticas recomendadas **100**, SEO **100**. LCP 2,6s · CLS 0,007 · TBT 0ms.
 
 > **Nada disso está publicado ainda.** O trabalho está na branch
 > `seo/encontrabilidade`, aberta como PR #1. O deploy da Vercel acontece no
@@ -28,9 +32,9 @@ alguma coisa (imagem, conta, caso real), ou de uma decisão editorial. Um deles,
 
 ---
 
-## 1. Publicar
+## 1. Publicar — ✅ concluído em 04–09/09/2026
 
-### 1.1 Mesclar o PR
+### 1.1 Mesclar o PR · ✅ feito
 
 https://github.com/FernandoGarciaRangel/SiteStudioWeb/pull/1
 
@@ -42,24 +46,29 @@ O mesmo deploy também **tira o `CLAUDE.md` do ar**: hoje ele responde 200 em
 `https://www.studiowebniteroi.com.br/CLAUDE.md`, e o `.vercelignore` deste PR
 resolve isso.
 
-### 1.2 Trocar o redirect do apex para 308 · *item 0.2*
+### 1.2 Redirect do apex para 308 · *item 0.2* · ✅ feito
 
-Hoje `studiowebniteroi.com.br` (sem `www`) devolve **307 Temporary**. Um redirect
+Resolvido: o apex agora devolve **308 Permanent** para o `www`. (Antes era 307.) Um redirect
 temporário diz ao Google que a mudança pode voltar atrás, então ele mantém as
 duas URLs no índice e não consolida a autoridade numa só.
 
 **Vercel → Settings → Domains** → marque o apex como redirect para o `www` com a
 opção **Permanent (308)**.
 
-### 1.3 Confirmar que os crawlers de IA não estão bloqueados · *item 0.4*
+### 1.3 Crawlers de IA não estão bloqueados · *item 0.4* · ✅ verificado
 
-**Vercel → Project → Firewall**: nenhuma regra deve estar barrando tráfego
-automatizado. Se houver, o `robots.txt` que libera GPTBot, ClaudeBot e
-PerplexityBot não adianta nada — o bloqueio acontece antes, no edge.
+Testado de fora em 09/09, batendo no site com o user-agent de cada crawler.
+GPTBot, OAI-SearchBot, ChatGPT-User, ClaudeBot, PerplexityBot, Google-Extended,
+Googlebot, Bingbot, facebookexternalhit e WhatsApp **todos recebem `200` com
+exatamente os mesmos 36.361 bytes** que um navegador comum, e com o telefone
+presente no HTML. Não há bloqueio no edge nem conteúdo diferente servido para bot.
 
-Duas semanas depois do deploy, confira em **Observability → Logs** filtrando por
-`GPTBot`, `ClaudeBot`, `PerplexityBot` e `OAI-SearchBot`. Se nenhum apareceu, o
-bloqueio está em algum lugar.
+Para repetir o teste depois de qualquer mudança de firewall:
+
+```
+curl -sS -o /dev/null -w "%{http_code} %{size_download}
+"   -A "compatible; GPTBot/1.2; +https://openai.com/gptbot"   https://www.studiowebniteroi.com.br/
+```
 
 ---
 
@@ -163,11 +172,21 @@ não tem como ser corroborado.
 Depois, some todos ao array `sameAs` do JSON-LD do `index.html` — é assim que se
 diz ao Google que esses perfis são a mesma entidade.
 
-### 2.7 Medir performance na URL servida · *item 6.4*
+### 2.7 Medir performance na URL servida · *item 6.4* · ✅ feito
 
-Depois do deploy, rode o PageSpeed Insights em `pagespeed.web.dev` na aba
-**Celular**, e trate o que aparecer. É a única medição que vale, porque mede o
-site servido e não o arquivo local.
+Rodado em 09/09 no `pagespeed.web.dev`, celular: Desempenho 93, Acessibilidade 94,
+Práticas 100, SEO 100. LCP 2,6s · CLS 0,007 · TBT 0ms.
+
+As duas falhas de acessibilidade apontadas foram corrigidas no mesmo dia:
+
+- **Contraste**: `--gray-500` era `#6a6a6a`, com 3,66:1 sobre o fundo — reprovava
+  no WCAG AA, que pede 4,5:1. Passou a `#828282` (5,15:1). O token é usado em 7
+  lugares, não só no rodapé — incluindo o parágrafo de fatos dos preços e o aviso
+  da tabela comparativa.
+- **Ordem de títulos**: o rodapé usava `<h4>` logo depois de um `<h2>`, pulando o
+  `h3`. Virou `<h3>` nas 7 páginas, com o seletor do CSS acompanhando.
+
+Vale rodar de novo depois de mexer em imagem ou fonte.
 
 ### 2.8 Acompanhar aparições em IA · *item 7.2* — mensal, ~10 min
 

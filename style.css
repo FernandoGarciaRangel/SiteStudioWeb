@@ -10,7 +10,7 @@
   --white: #fafafa;
   --gray-100: #f0f0f0;
   --gray-300: #a8a8a8;
-  --gray-500: #6a6a6a;
+  --gray-500: #828282;   /* 5.15:1 sobre --black; #6a6a6a dava 3.66:1 e reprovava no WCAG AA */
   --gray-700: #2a2a2a;
   --line: rgba(255,255,255,0.08);
   --line-strong: rgba(255,255,255,0.15);
@@ -1377,7 +1377,7 @@ footer {
   margin-bottom: 24px;
 }
 
-.footer-col h4 {
+.footer-col h3 {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
   font-weight: 500;
