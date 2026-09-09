@@ -7,30 +7,40 @@ Este arquivo fica fora do deploy (ver `.vercelignore`).
 
 ## Onde estamos
 
-Das 36 correções do diagnóstico, **28 estão aplicadas e mescladas na `main`** —
-tudo que era edição de arquivo no repositório, em 13 commits. O site foi de **1
-para 7 URLs indexáveis**.
+Das 36 correções do diagnóstico, **27 estão aplicadas**, em 14 commits — tudo
+que era edição de arquivo no repositório. O site foi de **1 para 7 URLs
+indexáveis**.
 
-O que ainda falta se divide em três grupos: o que depende de um clique no painel
-da Vercel, o que depende de você criar alguma coisa (imagem, conta, caso real), e
-duas decisões editoriais.
+Os **9 itens restantes** dependem de um clique no painel da Vercel, de você criar
+alguma coisa (imagem, conta, caso real), ou de uma decisão editorial. Um deles, o
+`7.1`, já está pronto no código e só espera você escolher o provedor de analytics.
 
-> **Nada disso está publicado ainda.** A `main` local está à frente do GitHub. O
-> deploy só acontece no `git push`, e é ele que leva as 7 páginas ao ar.
+| grupo | itens |
+|---|---|
+| Aplicados no repositório | 27 |
+| Painel da Vercel | 2 — `0.2`, `0.4` |
+| Precisam de material ou conta sua | 6 — `2.4`, `2.5`, `4.3`, `4.4`, `4.7`, `6.4` |
+| Acompanhamento contínuo | 1 — `7.2` |
+
+> **Nada disso está publicado ainda.** O trabalho está na branch
+> `seo/encontrabilidade`, aberta como PR #1. O deploy da Vercel acontece no
+> **merge do PR**, e é ele que leva as 7 páginas ao ar.
 
 ---
 
 ## 1. Publicar
 
-### 1.1 Enviar para o GitHub
+### 1.1 Mesclar o PR
 
-```
-git push origin main
-```
+https://github.com/FernandoGarciaRangel/SiteStudioWeb/pull/1
 
-A Vercel publica sozinha a partir da `main`. Este é o único passo que torna todo
-o resto visível — as 6 páginas novas, o `robots.txt`, o `sitemap.xml` e as
-correções da home não existem para ninguém até aqui.
+A Vercel publica sozinha a partir da `main`, então o merge do PR é o único passo
+que torna todo o resto visível — as 6 páginas novas, o `robots.txt`, o
+`sitemap.xml` e as correções da home não existem para ninguém até aqui.
+
+O mesmo deploy também **tira o `CLAUDE.md` do ar**: hoje ele responde 200 em
+`https://www.studiowebniteroi.com.br/CLAUDE.md`, e o `.vercelignore` deste PR
+resolve isso.
 
 ### 1.2 Trocar o redirect do apex para 308 · *item 0.2*
 
