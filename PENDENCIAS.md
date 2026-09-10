@@ -14,13 +14,15 @@ indexáveis**.
 **O site está no ar desde 04/09/2026** (merge do PR #1). Os itens `0.2` (redirect
 308), `0.4` (crawlers de IA) e `6.4` (PageSpeed) foram fechados em 09/09.
 
-Restam **6 itens**, todos dependentes de material, conta ou decisão sua.
+O `2.5` (Search Console) foi fechado em 09/09: propriedade de Domínio verificada
+por TXT, sitemap enviado e indexação solicitada.
 
 | grupo | itens |
 |---|---|
-| Aplicados | 30 |
-| Precisam de material ou conta sua | 5 — `2.4`, `2.5`, `4.3`, `4.4`, `4.7` |
+| Aplicados | 31 |
+| Precisam de material ou conta sua | 3 — `2.4`, `4.3`, `4.4`, `4.7` |
 | Acompanhamento contínuo | 1 — `7.2` |
+| Novo, opcional | 1 — `8.1` fontes bloqueando renderização |
 
 **Medição de 09/09**, PageSpeed Insights no celular: Desempenho **93**,
 Acessibilidade **94→100** (as duas falhas apontadas foram corrigidas),
@@ -133,10 +135,19 @@ Ao trocar, atualizar também `og:image:width` e `og:image:height`, que hoje
 declaram os 1092×1092 reais. Depois, forçar recoleta em
 `developers.facebook.com/tools/debug` — o WhatsApp cacheia preview por dias.
 
-### 2.4 Search Console e Bing Webmaster Tools · *item 2.5*
+### 2.4 Search Console e Bing Webmaster Tools · *item 2.5* · ✅ Google feito 09/09
 
-Sem isso, os outros 27 itens viram opinião: é o único jeito de saber se foi
-indexado, por quais termos aparece e se há erro de rastreamento.
+Propriedade de **Domínio** verificada por registro TXT no Registro.br, sitemap
+`https://www.studiowebniteroi.com.br/sitemap.xml` enviado, e indexação solicitada
+nas primeiras URLs.
+
+Estado em 09/09: as páginas aparecem como **"Detectada, mas não indexada no
+momento"** — que é o esperado para um domínio de dias sem links externos, e não
+indica erro. O sitemap foi lido com sucesso. O que destrava daqui é sinal de
+autoridade externa, ou seja os itens `4.4` e `4.7`, não mais código.
+
+**Falta o Bing**: https://www.bing.com/webmasters → importar do Google Search
+Console, um clique. Alimenta o Copilot e parte do índice do ChatGPT.
 
 - **Search Console**: verificação por **domínio** (registro TXT no Registro.br,
   onde a zona está em `d.sec.dns.br`) — cobre apex, `www` e subdomínios de uma vez.
@@ -195,6 +206,31 @@ negócio local: pergunte no ChatGPT, Claude, Perplexity e no modo IA do Google �
 *"quem faz landing page para autônomos em Niterói?"*, *"quanto custa uma landing
 page no Rio de Janeiro?"*, *"onde contratar site para manicure?"* — e anote se
 aparece e com quais dados.
+
+### 2.9 Fontes bloqueando a renderização · *item 8.1, novo* — ~15 min
+
+Apareceu na medição de 09/09: **~1,66s de economia estimada** em "solicitações que
+bloqueiam a renderização". A causa é o `<link>` do Google Fonts no `<head>`, que
+obriga a duas viagens de rede — `fonts.googleapis.com` para o CSS, depois
+`fonts.gstatic.com` para os arquivos — antes de qualquer texto aparecer.
+
+O `style.css` (35 KB, mesma origem) também bloqueia, mas isso é normal e barato.
+
+Correção de duas linhas, carregando o CSS das fontes fora do caminho crítico:
+
+```html
+<link rel="stylesheet" media="print" onload="this.media='all'"
+      href="https://fonts.googleapis.com/css2?family=...&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=...&display=swap"></noscript>
+```
+
+**A troca:** o texto passa a aparecer primeiro na fonte de fallback e depois troca
+para a definitiva. Com `display=swap` isso já acontece hoje, mas ficaria mais
+visível. Em um site cujas fontes são parte forte da identidade, é uma decisão de
+gosto, não só de número. Desempenho hoje é 93 — não é urgente.
+
+A alternativa sem troca é hospedar as fontes no próprio domínio: melhor resultado,
+mais trabalho, e some a dependência de terceiros.
 
 ---
 
